@@ -3,7 +3,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # Or "master", depending on your default branch
 
 permissions:
   contents: read
@@ -19,22 +19,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload site content
+      - name: Upload static site
         uses: actions/upload-pages-artifact@v2
         with:
-          path: .
-
-      - name: Upload artifact (required)
-        uses: actions/upload-artifact@v3
-        with:
-          name: site
-          path: .
+          path: .  # This assumes index.html is in the repo root
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v3
