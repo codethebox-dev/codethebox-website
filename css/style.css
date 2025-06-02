@@ -106,8 +106,7 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-}
-/* Code Editor and Preview */
+  /* Code Editor and Preview */
 
 .tutorial-content {
   max-width: 900px;
@@ -155,3 +154,5 @@ iframe#preview {
   border-radius: 8px;
   background-color: white;
 }
+}
+
