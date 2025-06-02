@@ -107,3 +107,51 @@ footer {
     align-items: center;
   }
 }
+/* Code Editor and Preview */
+
+.tutorial-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.code-editor {
+  position: relative;
+  margin-top: 1rem;
+}
+
+textarea#code {
+  width: 100%;
+  height: 250px;
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  background-color: #f9f9f9;
+}
+
+#runBtn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#runBtn:hover {
+  background-color: #005f99;
+}
+
+iframe#preview {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ddd;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background-color: white;
+}

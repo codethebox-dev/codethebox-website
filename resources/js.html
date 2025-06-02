@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JavaScript Tutorial - CodeTheBox</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">CodeTheBox</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="html.html">HTML</a></li>
+        <li><a href="css.html">CSS</a></li>
+        <li><a href="js.html" class="active">JavaScript</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="tutorial">
+    <section class="tutorial-content">
+      <h1>JavaScript Tutorial</h1>
+      <p>JavaScript is a programming language used to create interactive effects within web browsers.</p>
+
+      <h2>Basic JavaScript Example</h2>
+      <p>Try this simple script that changes text when clicking a button:</p>
+
+      <div class="code-editor">
+        <textarea id="code" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Example</title>
+</head>
+<body>
+  <h1 id="heading">Hello, JavaScript!</h1>
+  <button onclick="document.getElementById('heading').textContent = 'You clicked the button!'">Click Me</button>
+</body>
+</html>
+        </textarea>
+        <button id="runBtn">Run Code</button>
+      </div>
+
+      <h2>Live Preview</h2>
+      <iframe id="preview" sandbox="allow-scripts"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CodeTheBox. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/editor.js"></script>
+</body>
+</html>
