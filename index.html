@@ -2,59 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CodTheBox Community</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeTheBox - Learn HTML, CSS, JS</title>
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
   <header>
-    <img src="img/logo.png" alt="CodTheBox Logo" width="100" />
-    <h1>Welcome to CodTheBox Community</h1>
-    <nav>
-      <ul>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#community">Community</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <nav class="navbar">
+      <div class="logo">CodeTheBox</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resources/html.html">HTML</a></li>
+        <li><a href="resources/css.html">CSS</a></li>
+        <li><a href="resources/js.html">JavaScript</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="hero">
-      <h2>Empowering Learners & Innovators</h2>
-      <p>Access free resources, tutorials, and a growing community of tech enthusiasts.</p>
+  <main class="homepage">
+    <section class="intro">
+      <h1>Welcome to CodeTheBox</h1>
+      <p>Learn HTML, CSS, and JavaScript with interactive tutorials and live previews.</p>
     </section>
-
-    <section id="courses">
-      <h2>📚 Courses</h2>
-      <ul>
-        <li><a href="resources/course-html.pdf">HTML Basics (PDF)</a></li>
-        <li><a href="resources/course-css.pdf">CSS Essentials (PDF)</a></li>
-        <li><a href="https://youtube.com/@yourchannel" target="_blank">Video Lessons (YouTube)</a></li>
-      </ul>
-    </section>
-
-    <section id="blog">
-      <h2>📰 Blog & Articles</h2>
-      <p>Latest tutorials and community stories coming soon!</p>
-    </section>
-
-    <section id="community">
-      <h2>🤝 Join Our Community</h2>
-      <p>Join our <a href="https://discord.gg/yourlink" target="_blank">Discord server</a> to connect, ask questions, and grow together.</p>
-    </section>
-
-    <section id="contact">
-      <h2>📩 Contact Us</h2>
-      <p>Email: <a href="mailto:info@codthebox.com">info@codthebox.com</a></p>
+    <section class="topics">
+      <div class="card">
+        <h2>HTML Tutorial</h2>
+        <p>Learn the structure of web pages with HTML.</p>
+        <a href="resources/html.html" class="btn">Start Learning</a>
+      </div>
+      <div class="card">
+        <h2>CSS Tutorial</h2>
+        <p>Style your websites with modern CSS techniques.</p>
+        <a href="resources/css.html" class="btn">Start Learning</a>
+      </div>
+      <div class="card">
+        <h2>JavaScript Tutorial</h2>
+        <p>Bring interactivity to your web pages using JavaScript.</p>
+        <a href="resources/js.html" class="btn">Start Learning</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 CodTheBox. All rights reserved.</p>
+    <p>&copy; 2025 CodeTheBox. All rights reserved.</p>
   </footer>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
