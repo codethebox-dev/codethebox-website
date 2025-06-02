@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Course Management - CodeTheBox</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">CodeTheBox</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="management.html" class="active">Manage</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="tutorial">
+    <section class="tutorial-content">
+      <h1>Course Management Panel</h1>
+      <p>Manage your tutorials below:</p>
+
+      <div id="course-form">
+        <input type="text" id="courseTitle" placeholder="Course Title" />
+        <input type="text" id="courseURL" placeholder="Course URL (e.g., html.html)" />
+        <button onclick="addCourse()">Add Course</button>
+      </div>
+
+      <table id="courseTable">
+        <thead>
+          <tr>
+            <th>Course Title</th>
+            <th>Page URL</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="courseList">
+          <!-- Dynamic rows -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CodeTheBox. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/manage.js"></script>
+</body>
+</html>
