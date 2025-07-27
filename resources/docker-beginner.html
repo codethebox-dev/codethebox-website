@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Docker for Beginners Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: "Warm Neutral" - A calm, professional palette with a light background (bg-stone-50), dark text (text-stone-800), a primary accent (sky-600), and secondary neutral tones (stone-200, stone-500). -->
+    <!-- Application Structure Plan: The application is designed with a persistent sidebar navigation and a main content area. This structure was chosen over a linear slide format to provide a superior user experience, allowing both sequential learning for beginners and quick, non-linear access for users seeking specific information (e.g., jumping directly to commands). The flow encourages exploration by grouping related concepts into thematic sections (Intro, Concepts, Commands, etc.), making the information more digestible and accessible. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Core concepts (Image, Container, Dockerfile). Goal: Explain relationships. Viz/Method: Interactive HTML/CSS diagram. Interaction: Clicking on a diagram component reveals its detailed description. Justification: This is more engaging and effective at showing connections than static, separate text blocks. Library: Vanilla JS.
+        - Report Info: Docker commands. Goal: Provide a quick, practical reference. Viz/Method: Tabbed interface. Interaction: Users click tabs to switch between command categories (Build, Manage, etc.) and can copy commands to their clipboard. Justification: Organizes a large amount of code information cleanly and adds utility. Library: Vanilla JS.
+        - Report Info: Docker Workflow. Goal: Summarize a process. Viz/Method: Numbered-step visual flow using HTML/CSS. Interaction: Static. Justification: A simple, clear visual representation is most effective for a straightforward process.
+        - CONFIRMATION: No quantitative data exists in the source, so Chart.js/Plotly are not used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease-in-out; }
+        .nav-link.active { background-color: #0284c7; color: white; }
+        .nav-link:not(.active):hover { background-color: #e5e7eb; }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        .code-block { position: relative; }
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: #4b5563;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .code-block:hover .copy-btn { opacity: 1; }
+        .diagram-box { border: 2px solid transparent; cursor: pointer; transition: all 0.2s ease-in-out; }
+        .diagram-box.active { border-color: #0284c7; background-color: #e0f2fe; }
+        .diagram-box:not(.active):hover { background-color: #f3f4f6; }
+        .tab.active { border-color: #0284c7; color: #0284c7; background-color: white; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar Navigation -->
+        <nav id="sidebar" class="w-full md:w-64 bg-white border-r border-stone-200 p-4 md:p-6 flex-shrink-0">
+            <h1 class="text-xl font-bold text-sky-700 mb-6">Docker Guide</h1>
+            <ul class="space-y-2">
+                <li><a href="#introduction" class="nav-link block w-full text-left rounded-md p-3 font-medium active">Introduction</a></li>
+                <li><a href="#concepts" class="nav-link block w-full text-left rounded-md p-3 font-medium">Core Concepts</a></li>
+                <li><a href="#commands" class="nav-link block w-full text-left rounded-md p-3 font-medium">Commands</a></li>
+                <li><a href="#compose" class="nav-link block w-full text-left rounded-md p-3 font-medium">Docker Compose</a></li>
+                <li><a href="#workflow" class="nav-link block w-full text-left rounded-md p-3 font-medium">Workflow</a></li>
+                <li><a href="#resources" class="nav-link block w-full text-left rounded-md p-3 font-medium">Resources</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 sm:p-6 md:p-10">
+            <!-- Introduction Section -->
+            <section id="introduction" class="content-section active">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-2">Docker for Beginners</h2>
+                    <p class="text-lg text-stone-600 mb-8">Your journey into the world of containerization starts here. This guide transforms the standard presentation into an interactive experience, allowing you to explore concepts at your own pace.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200 mb-6">
+                        <h3 class="text-2xl font-semibold mb-3">What is Docker?</h3>
+                        <p class="mb-4">Docker is an open-source platform that enables developers to build, ship, and run applications in a consistent and isolated environment called a container. Containers are lightweight, portable, self-sufficient units that package an application and all its dependencies.</p>
+                        <div class="bg-sky-50 text-sky-800 p-4 rounded-md">
+                            <strong>Analogy:</strong> Think of containers as standardized shipping containers for software. Just as a physical container can be moved from a ship to a train to a truck, a Docker container can be moved from a developer's laptop to a testing server to a production cloud, and it will run the same way everywhere.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold mb-3">Why Use Docker? The Problems It Solves</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>"It works on my machine!"</strong> Docker eliminates environment inconsistencies between development, testing, and production by packaging the application with its environment.</li>
+                            <li><strong>Dependency Hell:</strong> It bundles all necessary libraries and dependencies with the application, avoiding conflicts with other applications on the same host.</li>
+                            <li><strong>Faster Deployment:</strong> Containers are lightweight and start quickly, leading to faster and more reliable application deployment cycles.</li>
+                            <li><strong>Resource Efficiency:</strong> Containers share the host machine's OS kernel, making them much more efficient in terms of CPU and memory usage compared to traditional virtual machines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Concepts Section -->
+            <section id="concepts" class="content-section">
+                 <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-2">Core Concepts</h2>
+                    <p class="text-lg text-stone-600 mb-8">Docker has a few core components that work together. Click on each part of the diagram below to understand its role in the Docker ecosystem. This interactive diagram shows how a `Dockerfile` is used to `build` an `Image`, which is then used to `run` one or more `Containers`.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 items-start">
+                        <!-- Interactive Diagram -->
+                        <div class="space-y-4">
+                            <div id="diagram-dockerfile" class="diagram-box active bg-white p-6 rounded-lg shadow-sm border-2">
+                                <h4 class="text-xl font-semibold text-center">📄 Dockerfile</h4>
+                                <p class="text-center text-sm text-stone-500">The Blueprint</p>
+                            </div>
+                            <div class="text-center text-2xl font-bold text-stone-400">↓ build</div>
+                            <div id="diagram-image" class="diagram-box bg-white p-6 rounded-lg shadow-sm border-2">
+                                <h4 class="text-xl font-semibold text-center">💿 Image</h4>
+                                <p class="text-center text-sm text-stone-500">The Template</p>
+                            </div>
+                            <div class="text-center text-2xl font-bold text-stone-400">↓ run</div>
+                            <div id="diagram-container" class="diagram-box bg-white p-6 rounded-lg shadow-sm border-2">
+                                <h4 class="text-xl font-semibold text-center">📦 Container</h4>
+                                <p class="text-center text-sm text-stone-500">The Running App</p>
+                            </div>
+                        </div>
+
+                        <!-- Details Pane -->
+                        <div id="concept-details" class="bg-white p-6 rounded-lg shadow-sm border border-stone-200 min-h-[300px]">
+                            <!-- Content will be injected by JS -->
+                        </div>
+                    </div>
+                 </div>
+            </section>
+            
+            <!-- Commands Section -->
+            <section id="commands" class="content-section">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-2">Common Commands</h2>
+                    <p class="text-lg text-stone-600 mb-8">Here is a quick reference for the most frequently used Docker commands. Use the tabs to switch between categories. You can click the 'copy' icon that appears on hover to copy a command block.</p>
+                    
+                    <div class="border-b border-stone-200 mb-4">
+                        <nav class="-mb-px flex space-x-4" aria-label="Tabs">
+                            <button class="tab whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm active" data-tab="build-run">Build & Run</button>
+                            <button class="tab whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm" data-tab="manage-containers">Manage Containers</button>
+                            <button class="tab whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm" data-tab="manage-images">Manage Images</button>
+                        </nav>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <div id="tab-build-run" class="tab-content active space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Building an Image</h4>
+                                <p class="text-sm text-stone-600 mb-2">This command builds an image from a Dockerfile in the current directory.</p>
+                                <div class="code-block">
+                                    <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-bash">docker build -t my-app:1.0 .</code></pre>
+                                    <button class="copy-btn" title="Copy to clipboard">copy</button>
+                                </div>
+                                <ul class="mt-2 text-sm text-stone-600 list-disc list-inside">
+                                    <li><code>-t</code>: Tags your image with a name and optional version (name:tag).</li>
+                                    <li><code>.</code>: Specifies the build context (the current directory).</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Running a Container</h4>
+                                <p class="text-sm text-stone-600 mb-2">This command runs a container from the specified image.</p>
+                                <div class="code-block">
+                                    <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-bash">docker run -p 8080:80 my-app:1.0</code></pre>
+                                    <button class="copy-btn" title="Copy to clipboard">copy</button>
+                                </div>
+                                <ul class="mt-2 text-sm text-stone-600 list-disc list-inside">
+                                    <li><code>-p 8080:80</code>: Maps port 8080 on the host to port 80 inside the container.</li>
+                                    <li><code>my-app:1.0</code>: The image to run.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tab-manage-containers" class="tab-content space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">List Running Containers</h4>
+                                <div class="code-block">
+                                    <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-bash">docker ps</code></pre>
+                                    <button class="copy-btn" title="Copy to clipboard">copy</button>
+                                </div>
+                            </div>
+                             <div>
+                                <h4 class="font-semibold text-lg mb-2">List All Containers (including stopped)</h4>
+                                <div class="code-block">
+                                    <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-bash">docker ps -a</code></pre>
+                                    <button class="copy-btn" title="Copy to clipboard">copy</button>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Stop a Container</h4>
+                                <div class="code-block">
+                                    <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-bash">docker stop [container_id_or_name]</code></pre>
+                                    <button class="copy-btn" title="Copy to clipboard">copy</button>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Remove a Container</h4>
+                                <div class="code-block">
+                                    <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-bash">docker rm [container_id_or_name]</code></pre>
+                                    <button class="copy-btn" title="Copy to clipboard">copy</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-manage-images" class="tab-content space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">List Images</h4>
+                                <div class="code-block">
+                                    <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-bash">docker images</code></pre>
+                                    <button class="copy-btn" title="Copy to clipboard">copy</button>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Remove an Image</h4>
+                                <div class="code-block">
+                                    <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-bash">docker rmi [image_id_or_name]</code></pre>
+                                    <button class="copy-btn" title="Copy to clipboard">copy</button>
+                                </div>
+                                <p class="mt-2 text-sm text-stone-600">Note: You must stop and remove all containers based on an image before you can remove the image itself.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Docker Compose Section -->
+            <section id="compose" class="content-section">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-2">Introduction to Docker Compose</h2>
+                    <p class="text-lg text-stone-600 mb-8">When your application consists of multiple services (like a web server, a database, and a caching service), managing them individually becomes complex. Docker Compose is a tool for defining and running multi-container Docker applications.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                        <p class="mb-4">You use a YAML file, typically named <code>docker-compose.yml</code>, to configure your application's services. Then, with a single command, you can create and start all the services from your configuration.</p>
+                        <h4 class="font-semibold text-lg mb-2">Basic Commands</h4>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><code>docker-compose up</code>: Builds, (re)creates, starts, and attaches to containers for a service.</li>
+                            <li><code>docker-compose down</code>: Stops and removes containers, networks, images, and volumes created by `up`.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workflow Section -->
+            <section id="workflow" class="content-section">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-2">Typical Docker Workflow</h2>
+                    <p class="text-lg text-stone-600 mb-8">The development process with Docker generally follows these four steps. This cycle makes development predictable and portable.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold">Write a Dockerfile</h4>
+                                <p class="text-stone-600">Define the environment and steps needed to build your application into an image. This includes specifying a base image, copying your code, and installing dependencies.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold">Build an Image</h4>
+                                <p class="text-stone-600">Use the `docker build` command to execute the instructions in your Dockerfile and create a portable, read-only image.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold">Run a Container</h4>
+                                <p class="text-stone-600">Start a runnable instance of your image using the `docker run` command. This is your application running in its isolated environment.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-sky-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">4</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold">Share the Image (Optional)</h4>
+                                <p class="text-stone-600">Push your image to a registry like Docker Hub to share it with your team or deploy it to production servers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="content-section">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-2">Next Steps & Resources</h2>
+                    <p class="text-lg text-stone-600 mb-8">Ready to dive deeper? Here are some excellent resources to continue your learning journey.</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener noreferrer" class="block bg-white p-6 rounded-lg shadow-sm border border-stone-200 hover:border-sky-500 hover:shadow-md transition-all">
+                            <h4 class="text-xl font-semibold text-sky-700">Install Docker Desktop</h4>
+                            <p class="text-stone-600">The easiest way to get started with Docker on your Mac, Windows, or Linux machine.</p>
+                        </a>
+                        <a href="https://docs.docker.com/" target="_blank" rel="noopener noreferrer" class="block bg-white p-6 rounded-lg shadow-sm border border-stone-200 hover:border-sky-500 hover:shadow-md transition-all">
+                            <h4 class="text-xl font-semibold text-sky-700">Official Docker Docs</h4>
+                            <p class="text-stone-600">The definitive source for all Docker features and commands.</p>
+                        </a>
+                        <a href="https://labs.play-with-docker.com/" target="_blank" rel="noopener noreferrer" class="block bg-white p-6 rounded-lg shadow-sm border border-stone-200 hover:border-sky-500 hover:shadow-md transition-all">
+                            <h4 class="text-xl font-semibold text-sky-700">Play with Docker</h4>
+                            <p class="text-stone-600">A free, in-browser sandbox to experiment with Docker without any installation.</p>
+                        </a>
+                        <div class="block bg-sky-50 p-6 rounded-lg border border-sky-200">
+                            <h4 class="text-xl font-semibold text-sky-700">Practice!</h4>
+                            <p class="text-stone-600">The best way to learn is by doing. Try containerizing one of your own projects!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            // --- Main Navigation ---
+            function updateContent(hash) {
+                const targetHash = hash || '#introduction';
+                
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.hash === targetHash);
+                });
+
+                contentSections.forEach(section => {
+                    section.classList.toggle('active', section.id === targetHash.substring(1));
+                });
+            }
+
+            document.getElementById('sidebar').addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    const targetHash = e.target.hash;
+                    window.location.hash = targetHash;
+                }
+            });
+            
+            window.addEventListener('hashchange', () => updateContent(window.location.hash));
+            updateContent(window.location.hash);
+
+
+            // --- Core Concepts Interactivity ---
+            const conceptDetailsContainer = document.getElementById('concept-details');
+            const diagramBoxes = document.querySelectorAll('.diagram-box');
+            const conceptsData = {
+                'diagram-dockerfile': {
+                    title: '📄 Dockerfile',
+                    description: "A Dockerfile is a text file that contains all the commands, in order, needed to build a given image. It's the recipe for creating a Docker image. It specifies the base image, copies application code, runs commands to install dependencies, and sets the default command to run when a container starts.",
+                    keyCommands: ['FROM', 'WORKDIR', 'COPY', 'RUN', 'CMD', 'EXPOSE']
+                },
+                'diagram-image': {
+                    title: '💿 Docker Image',
+                    description: "A Docker image is a read-only template with instructions for creating a Docker container. It's a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. Think of it as a blueprint or a class in object-oriented programming.",
+                    keyCommands: []
+                },
+                'diagram-container': {
+                    title: '📦 Docker Container',
+                    description: "A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. It is a lightweight, isolated, and portable environment where your application actually runs. Multiple containers can run on the same machine and share the OS kernel with other containers, each running as isolated processes.",
+                    keyCommands: []
+                }
+            };
+
+            function updateConceptDetails(conceptId) {
+                const data = conceptsData[conceptId];
+                if (!data) return;
+
+                let commandsHTML = '';
+                if (data.keyCommands && data.keyCommands.length > 0) {
+                    commandsHTML = `<h4 class="font-semibold mt-4 mb-2">Key Instructions:</h4><div class="flex flex-wrap gap-2">${data.keyCommands.map(cmd => `<span class="bg-stone-200 text-stone-700 text-xs font-mono py-1 px-2 rounded">${cmd}</span>`).join('')}</div>`;
+                }
+
+                conceptDetailsContainer.innerHTML = `
+                    <h3 class="text-2xl font-semibold mb-3">${data.title}</h3>
+                    <p class="text-stone-600">${data.description}</p>
+                    ${commandsHTML}
+                `;
+
+                diagramBoxes.forEach(box => {
+                    box.classList.toggle('active', box.id === conceptId);
+                });
+            }
+
+            diagramBoxes.forEach(box => {
+                box.addEventListener('click', () => {
+                    updateConceptDetails(box.id);
+                });
+            });
+            
+            updateConceptDetails('diagram-dockerfile');
+
+
+            // --- Commands Section Tabs ---
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.dataset.tab;
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    tabContents.forEach(content => {
+                        content.classList.toggle('active', content.id === `tab-${targetId}`);
+                    });
+                });
+            });
+
+            // --- Copy to Clipboard for Code Blocks ---
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pre = button.previousElementSibling;
+                    const code = pre.querySelector('code').innerText;
+                    
+                    // Use a temporary textarea to copy text
+                    const textArea = document.createElement('textarea');
+                    textArea.value = code;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        button.innerText = 'copied!';
+                        setTimeout(() => { button.innerText = 'copy'; }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy text: ', err);
+                        button.innerText = 'error';
+                        setTimeout(() => { button.innerText = 'copy'; }, 2000);
+                    }
+                    document.body.removeChild(textArea);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
