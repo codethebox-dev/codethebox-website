@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community | CodeTheBox</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-bracket">[</span><span class="logo-text">CTB</span><span class="logo-bracket">]</span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="courses.html" class="nav-item"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="roadmap.html" class="nav-item"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="labs.html" class="nav-item"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="certifications.html" class="nav-item"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="resources.html" class="nav-item"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="community.html" class="nav-item active"><span class="nav-icon">◉</span><span>Community</span></a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
+      <li><a href="courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
+      <li><a href="courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb"><span class="bc-root">codethebox</span><span class="bc-sep"> / </span><span class="bc-current">community</span></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_posts --topic" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+    <section class="page-header">
+      <div class="page-tag">// CONNECT · DISCUSS · COLLABORATE</div>
+      <h1 class="page-title">Community</h1>
+      <p class="page-sub">A space for learners, practitioners, and professionals in security, cloud, and infrastructure. Share writeups, ask questions, compare notes.</p>
+    </section>
+    <section class="page-content">
+      <div class="community-grid">
+        <div>
+          <div class="filter-bar" style="margin-bottom:20px">
+            <button class="filter-btn active">All Posts</button>
+            <button class="filter-btn">Writeups</button>
+            <button class="filter-btn">Q&A</button>
+            <button class="filter-btn">Career</button>
+            <button class="filter-btn">News</button>
+          </div>
+          <div class="post-list">
+
+            <div class="post-card">
+              <div class="post-meta">
+                <span class="post-author">r00tZ3r0</span>
+                <span class="post-date">2h ago</span>
+                <span class="post-category sec-tag" style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:3px">WRITEUP</span>
+              </div>
+              <div class="post-title">HTB: How I rooted "OperaBox" — Full OSCP-style Writeup</div>
+              <p class="post-preview">Started with a Nmap scan revealing port 8080 running a vulnerable version of Apache Struts. Used RCE to get a shell, then found a SUID binary that led to root via path injection...</p>
+              <div class="post-footer">
+                <span>👍 142 upvotes</span>
+                <span>💬 38 comments</span>
+                <span>🔖 Save</span>
+              </div>
+            </div>
+
+            <div class="post-card">
+              <div class="post-meta">
+                <span class="post-author">cloudOps_K</span>
+                <span class="post-date">5h ago</span>
+                <span class="post-category cloud-tag" style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:3px">DISCUSSION</span>
+              </div>
+              <div class="post-title">AWS vs Azure for enterprise workloads in 2025 — my experience after 3 years</div>
+              <p class="post-preview">After running production workloads on both platforms for major clients, here are my unfiltered thoughts on cost, support, and where each platform truly excels...</p>
+              <div class="post-footer">
+                <span>👍 89 upvotes</span>
+                <span>💬 61 comments</span>
+                <span>🔖 Save</span>
+              </div>
+            </div>
+
+            <div class="post-card">
+              <div class="post-meta">
+                <span class="post-author">NetWizard_A</span>
+                <span class="post-date">1d ago</span>
+                <span class="post-category net-tag" style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:3px">Q&A</span>
+              </div>
+              <div class="post-title">Why is my BGP route not being advertised to the peer? (GNS3 lab help)</div>
+              <p class="post-preview">I have a GNS3 topology with two routers in separate ASes. R1 (AS100) has the network 10.10.0.0/24 but R2 is not seeing it in its BGP table even though the session is established...</p>
+              <div class="post-footer">
+                <span>👍 24 upvotes</span>
+                <span>💬 19 comments</span>
+                <span>🔖 Save</span>
+              </div>
+            </div>
+
+            <div class="post-card">
+              <div class="post-meta">
+                <span class="post-author">sec_Analyst_M</span>
+                <span class="post-date">2d ago</span>
+                <span class="post-category sec-tag" style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:3px">CAREER</span>
+              </div>
+              <div class="post-title">Landed my first SOC Analyst role after 6 months — here's what actually worked</div>
+              <p class="post-preview">I'll be honest, the first 3 months I was going in the wrong direction. The moment I stopped just watching videos and started building my home lab and doing CTFs was when everything changed...</p>
+              <div class="post-footer">
+                <span>👍 312 upvotes</span>
+                <span>💬 94 comments</span>
+                <span>🔖 Save</span>
+              </div>
+            </div>
+
+            <div class="post-card">
+              <div class="post-meta">
+                <span class="post-author">infraDev_J</span>
+                <span class="post-date">3d ago</span>
+                <span class="post-category infra-tag" style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:3px">WRITEUP</span>
+              </div>
+              <div class="post-title">My Ansible + Terraform stack for zero-downtime deployments (template inside)</div>
+              <p class="post-preview">Sharing the full IaC stack I use to manage 40+ servers at work. Uses Terraform for provisioning and Ansible for configuration. Rolling updates without a single minute of downtime...</p>
+              <div class="post-footer">
+                <span>👍 178 upvotes</span>
+                <span>💬 47 comments</span>
+                <span>🔖 Save</span>
+              </div>
+            </div>
+
+            <div class="post-card">
+              <div class="post-meta">
+                <span class="post-author">k8s_Gal</span>
+                <span class="post-date">4d ago</span>
+                <span class="post-category cloud-tag" style="margin-left:auto;font-size:8px;padding:2px 7px;border-radius:3px">RESOURCE</span>
+              </div>
+              <div class="post-title">The Ultimate CKA Exam Preparation Guide (2025 Updated)</div>
+              <p class="post-preview">After failing the CKA on my first attempt, I put together this guide that covers everything you need. Includes my personal study schedule, the best free resources, and tips for the practical exam...</p>
+              <div class="post-footer">
+                <span>👍 456 upvotes</span>
+                <span>💬 132 comments</span>
+                <span>🔖 Save</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <div class="leaderboard" style="margin-bottom:16px">
+            <div class="lb-header">
+              <span class="prompt">></span> weekly_leaderboard
+            </div>
+            <div class="lb-item">
+              <span class="lb-rank gold">1</span>
+              <span class="lb-name">r00tZ3r0</span>
+              <span class="lb-xp">4,820 XP</span>
+            </div>
+            <div class="lb-item">
+              <span class="lb-rank silver">2</span>
+              <span class="lb-name">k8s_Gal</span>
+              <span class="lb-xp">4,310 XP</span>
+            </div>
+            <div class="lb-item">
+              <span class="lb-rank bronze">3</span>
+              <span class="lb-name">infraDev_J</span>
+              <span class="lb-xp">3,890 XP</span>
+            </div>
+            <div class="lb-item">
+              <span class="lb-rank other">4</span>
+              <span class="lb-name">sec_Analyst_M</span>
+              <span class="lb-xp">3,200 XP</span>
+            </div>
+            <div class="lb-item">
+              <span class="lb-rank other">5</span>
+              <span class="lb-name">cloudOps_K</span>
+              <span class="lb-xp">2,940 XP</span>
+            </div>
+            <div class="lb-item">
+              <span class="lb-rank other">6</span>
+              <span class="lb-name">NetWizard_A</span>
+              <span class="lb-xp">2,560 XP</span>
+            </div>
+            <div class="lb-item">
+              <span class="lb-rank other">7</span>
+              <span class="lb-name">pentest_PX</span>
+              <span class="lb-xp">2,110 XP</span>
+            </div>
+            <div class="lb-item">
+              <span class="lb-rank other">8</span>
+              <span class="lb-name">devSecOps_B</span>
+              <span class="lb-xp">1,890 XP</span>
+            </div>
+            <div class="lb-item" style="opacity:0.5">
+              <span class="lb-rank other">--</span>
+              <span class="lb-name">Guest_User (You)</span>
+              <span class="lb-xp">2,200 XP</span>
+            </div>
+          </div>
+
+          <!-- Discord / Socials -->
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title"><span class="prompt">></span> join_us</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <a href="#" class="resource-card" style="text-decoration:none;padding:12px">
+                <div class="resource-icon">💬</div>
+                <div class="resource-info">
+                  <div class="resource-type">COMMUNITY</div>
+                  <div class="resource-title">Discord Server</div>
+                  <p class="resource-desc">2,400+ members. Study groups, CTF teams, and job board.</p>
+                </div>
+              </a>
+              <a href="#" class="resource-card" style="text-decoration:none;padding:12px">
+                <div class="resource-icon">🐙</div>
+                <div class="resource-info">
+                  <div class="resource-type">OPEN SOURCE</div>
+                  <div class="resource-title">GitHub</div>
+                  <p class="resource-desc">Course content, lab configs, and community contributions.</p>
+                </div>
+              </a>
+              <a href="#" class="resource-card" style="text-decoration:none;padding:12px">
+                <div class="resource-icon">🐦</div>
+                <div class="resource-info">
+                  <div class="resource-type">SOCIAL</div>
+                  <div class="resource-title">@CodeTheBox</div>
+                  <p class="resource-desc">Daily security tips, CTF writeups, and career threads.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

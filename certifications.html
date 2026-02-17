@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certifications | CodeTheBox</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-bracket">[</span><span class="logo-text">CTB</span><span class="logo-bracket">]</span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="courses.html" class="nav-item"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="roadmap.html" class="nav-item"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="labs.html" class="nav-item"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="certifications.html" class="nav-item active"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="resources.html" class="nav-item"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="community.html" class="nav-item"><span class="nav-icon">◉</span><span>Community</span></a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
+      <li><a href="courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
+      <li><a href="courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb"><span class="bc-root">codethebox</span><span class="bc-sep"> / </span><span class="bc-current">certifications</span></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_certs --vendor" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+    <section class="page-header">
+      <div class="page-tag">// INDUSTRY CERTIFICATIONS</div>
+      <h1 class="page-title">Certification Paths</h1>
+      <p class="page-sub">18 industry-recognized certification tracks. We map every module to real exam objectives. Track your progress toward the cert that matters for your career.</p>
+    </section>
+    <section class="page-content">
+      <div class="filter-bar">
+        <button class="filter-btn active">ALL</button>
+        <button class="filter-btn sec">Security</button>
+        <button class="filter-btn cloud">Cloud</button>
+        <button class="filter-btn infra">Infrastructure</button>
+        <button class="filter-btn net">Networking</button>
+      </div>
+      <div class="cert-grid-full">
+
+        <div class="cert-card-full">
+          <span class="cert-logo">🏅</span>
+          <div class="cert-vendor-full">CompTIA</div>
+          <div class="cert-name-full">Security+</div>
+          <p class="cert-desc-full">Entry-level security certification. Covers threats, cryptography, PKI, network security, and identity management. SY0-701 exam prep.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>62%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:62%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">45 modules</span>
+            <span class="c-badge beginner">Beginner</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">🏅</span>
+          <div class="cert-vendor-full">CompTIA</div>
+          <div class="cert-name-full">CySA+</div>
+          <p class="cert-desc-full">Cybersecurity Analyst certification. Threat detection, analysis, and response. SIEM, threat hunting, and incident response workflows.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>0%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:0%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">58 modules</span>
+            <span class="c-badge intermediate">Intermediate</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">🔴</span>
+          <div class="cert-vendor-full">Offensive Security</div>
+          <div class="cert-name-full">OSCP</div>
+          <p class="cert-desc-full">The gold standard pentesting cert. Buffer overflows, web exploitation, Active Directory, and 24-hour practical exam in a live environment.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>12%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:12%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">82 modules</span>
+            <span class="c-badge expert">Expert</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">🔐</span>
+          <div class="cert-vendor-full">ISC²</div>
+          <div class="cert-name-full">CISSP</div>
+          <p class="cert-desc-full">The premier security management certification. 8 domains covering risk management, architecture, cryptography, and operations.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>0%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:0%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">96 modules</span>
+            <span class="c-badge expert">Expert</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">☁️</span>
+          <div class="cert-vendor-full">Amazon Web Services</div>
+          <div class="cert-name-full">AWS SAA-C03</div>
+          <p class="cert-desc-full">Solutions Architect Associate. Core AWS services, HA design patterns, cost optimization, and security best practices for cloud environments.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>38%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:38%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">52 modules</span>
+            <span class="c-badge intermediate">Intermediate</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">☁️</span>
+          <div class="cert-vendor-full">Amazon Web Services</div>
+          <div class="cert-name-full">AWS Security Specialty</div>
+          <p class="cert-desc-full">SCS-C02. Deep dive into IAM, GuardDuty, Security Hub, AWS WAF, KMS, and CloudTrail. For cloud security engineers.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>5%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:5%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">68 modules</span>
+            <span class="c-badge advanced">Advanced</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">🏗️</span>
+          <div class="cert-vendor-full">HashiCorp</div>
+          <div class="cert-name-full">Terraform Associate</div>
+          <p class="cert-desc-full">IaC with Terraform. Modules, remote state, workspaces, Terraform Cloud, and multi-cloud deployments with the HCL configuration language.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>20%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:20%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">34 modules</span>
+            <span class="c-badge intermediate">Intermediate</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">🎡</span>
+          <div class="cert-vendor-full">Cloud Native Foundation</div>
+          <div class="cert-name-full">CKA / CKAD</div>
+          <p class="cert-desc-full">Certified Kubernetes Administrator and Developer. Cluster management, workloads, networking, storage, security, and troubleshooting.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>0%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:0%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">74 modules</span>
+            <span class="c-badge advanced">Advanced</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">🐧</span>
+          <div class="cert-vendor-full">Red Hat</div>
+          <div class="cert-name-full">RHCSA / RHCE</div>
+          <p class="cert-desc-full">Red Hat Linux system administration and engineer certification. SELinux, systemd, containers with Podman, and Ansible automation.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>85%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:85%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">58 modules</span>
+            <span class="c-badge intermediate">Intermediate</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">🌐</span>
+          <div class="cert-vendor-full">CompTIA</div>
+          <div class="cert-name-full">Network+</div>
+          <p class="cert-desc-full">Vendor-neutral networking certification. TCP/IP, OSI model, subnetting, VLANs, routing, wireless, and troubleshooting methodologies.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>55%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:55%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">46 modules</span>
+            <span class="c-badge beginner">Beginner</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">🔵</span>
+          <div class="cert-vendor-full">Cisco</div>
+          <div class="cert-name-full">CCNA 200-301</div>
+          <p class="cert-desc-full">Cisco Certified Network Associate. Routing, switching, VLANs, OSPF, access control lists, NAT, VPNs, and SD-WAN overview.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>0%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:0%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">62 modules</span>
+            <span class="c-badge intermediate">Intermediate</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+        <div class="cert-card-full">
+          <span class="cert-logo">⚡</span>
+          <div class="cert-vendor-full">Cisco</div>
+          <div class="cert-name-full">CCNP Enterprise</div>
+          <p class="cert-desc-full">Advanced Cisco routing and switching. BGP, OSPF, MPLS, QoS, SD-WAN, network programmability, and advanced troubleshooting.</p>
+          <div class="cert-progress-section">
+            <div class="cert-prog-label"><span>Progress</span><span>0%</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" style="width:0%"></div></div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-modules-count">96 modules</span>
+            <span class="c-badge advanced">Advanced</span>
+            <a href="roadmap.html" class="btn-ghost" style="padding:5px 12px;font-size:9px">View Path →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

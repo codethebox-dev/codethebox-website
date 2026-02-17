@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses | CodeTheBox</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">CTB</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item" data-page="dashboard"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="courses.html" class="nav-item active" data-page="courses"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="roadmap.html" class="nav-item" data-page="roadmap"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="labs.html" class="nav-item" data-page="labs"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="certifications.html" class="nav-item" data-page="certs"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="resources.html" class="nav-item" data-page="resources"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="community.html" class="nav-item" data-page="community"><span class="nav-icon">◉</span><span>Community</span></a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
+      <li><a href="courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
+      <li><a href="courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb"><span class="bc-root">codethebox</span><span class="bc-sep"> / </span><span class="bc-current">courses</span></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_courses --all" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+    <section class="page-header">
+      <div class="page-tag">// ALL MODULES</div>
+      <h1 class="page-title">Course Library</h1>
+      <p class="page-sub">240+ modules across four core tracks. Filter by domain or level. Real-world labs included.</p>
+    </section>
+    <section class="page-content">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-track="all">ALL</button>
+        <button class="filter-btn sec" data-track="security">🔐 Security</button>
+        <button class="filter-btn cloud" data-track="cloud">☁️ Cloud</button>
+        <button class="filter-btn infra" data-track="infra">🖥️ Infrastructure</button>
+        <button class="filter-btn net" data-track="networking">🌐 Networking</button>
+      </div>
+      <div class="courses-grid">
+
+        <div class="course-card" data-track="security">
+          <div class="course-thumb thumb-sec"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-sec">SECURITY</span>
+              <span class="course-level">BEGINNER</span>
+            </div>
+            <div class="course-title">CompTIA Security+ Bootcamp</div>
+            <p class="course-desc">Full prep for the SY0-701 exam. Covers threats, vulnerabilities, cryptography, PKI, access control, and compliance.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 22 hours</span>
+              <span class="course-modules">45 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="security">
+          <div class="course-thumb thumb-sec"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-sec">SECURITY</span>
+              <span class="course-level">EXPERT</span>
+            </div>
+            <div class="course-title">OSCP Prep: Penetration Testing</div>
+            <p class="course-desc">Hands-on pentesting from enumeration to exploitation. Buffer overflows, Active Directory attacks, privilege escalation, report writing.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 68 hours</span>
+              <span class="course-modules">82 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="security">
+          <div class="course-thumb thumb-sec"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-sec">SECURITY</span>
+              <span class="course-level">INTERMEDIATE</span>
+            </div>
+            <div class="course-title">SOC Analyst: L1 to L2</div>
+            <p class="course-desc">SIEM operations, alert triage, threat hunting, log analysis, incident response playbooks, and SOAR automation.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 34 hours</span>
+              <span class="course-modules">58 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="security">
+          <div class="course-thumb thumb-sec"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-sec">SECURITY</span>
+              <span class="course-level">ADVANCED</span>
+            </div>
+            <div class="course-title">Zero Trust Architecture</div>
+            <p class="course-desc">Implement zero trust with Microsoft Entra, BeyondCorp, Cloudflare Access, and SASE frameworks in enterprise environments.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 18 hours</span>
+              <span class="course-modules">36 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="cloud">
+          <div class="course-thumb thumb-cloud"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-cloud">CLOUD</span>
+              <span class="course-level">BEGINNER</span>
+            </div>
+            <div class="course-title">AWS Cloud Practitioner</div>
+            <p class="course-desc">Start your cloud journey. Core AWS services, pricing, billing, global infrastructure, and the shared responsibility model.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 12 hours</span>
+              <span class="course-modules">28 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="cloud">
+          <div class="course-thumb thumb-cloud"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-cloud">CLOUD</span>
+              <span class="course-level">ADVANCED</span>
+            </div>
+            <div class="course-title">AWS Security Specialty</div>
+            <p class="course-desc">IAM deep dive, GuardDuty, Security Hub, AWS WAF, encryption with KMS, CloudTrail auditing, and compliance automation.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 24 hours</span>
+              <span class="course-modules">52 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="cloud">
+          <div class="course-thumb thumb-cloud"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-cloud">CLOUD</span>
+              <span class="course-level">INTERMEDIATE</span>
+            </div>
+            <div class="course-title">Terraform from Zero to Hero</div>
+            <p class="course-desc">IaC with HashiCorp Terraform. Modules, remote state, workspaces, Terraform Cloud, and multi-cloud deployments.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 16 hours</span>
+              <span class="course-modules">34 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="cloud">
+          <div class="course-thumb thumb-cloud"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-cloud">CLOUD</span>
+              <span class="course-level">ADVANCED</span>
+            </div>
+            <div class="course-title">Kubernetes Deep Dive</div>
+            <p class="course-desc">CKA and CKAD prep. Pods, deployments, networking, storage, RBAC, Helm charts, GitOps with ArgoCD and Flux.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 40 hours</span>
+              <span class="course-modules">74 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="infra">
+          <div class="course-thumb thumb-infra"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-infra">INFRA</span>
+              <span class="course-level">BEGINNER</span>
+            </div>
+            <div class="course-title">Linux Administration Fundamentals</div>
+            <p class="course-desc">LPIC-1 and RHCSA prep. File systems, permissions, processes, networking, systemd, scripting, and package management.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 28 hours</span>
+              <span class="course-modules">58 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="infra">
+          <div class="course-thumb thumb-infra"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-infra">INFRA</span>
+              <span class="course-level">INTERMEDIATE</span>
+            </div>
+            <div class="course-title">Windows Server 2022 Administration</div>
+            <p class="course-desc">Active Directory, Group Policy, DNS, DHCP, Hyper-V, Windows Server hardening, and MCSA exam preparation.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 32 hours</span>
+              <span class="course-modules">62 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="infra">
+          <div class="course-thumb thumb-infra"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-infra">INFRA</span>
+              <span class="course-level">INTERMEDIATE</span>
+            </div>
+            <div class="course-title">Docker & Container Security</div>
+            <p class="course-desc">Container fundamentals, Docker Compose, image hardening, vulnerability scanning, runtime security with Falco and Trivy.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 20 hours</span>
+              <span class="course-modules">44 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="infra">
+          <div class="course-thumb thumb-infra"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-infra">INFRA</span>
+              <span class="course-level">ADVANCED</span>
+            </div>
+            <div class="course-title">CI/CD Pipeline Engineering</div>
+            <p class="course-desc">Build, test, and deploy pipelines using GitHub Actions, GitLab CI, Jenkins, ArgoCD. DevSecOps integration and SAST/DAST.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 24 hours</span>
+              <span class="course-modules">48 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="networking">
+          <div class="course-thumb thumb-net"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-net">NETWORKING</span>
+              <span class="course-level">BEGINNER</span>
+            </div>
+            <div class="course-title">CompTIA Network+ Complete</div>
+            <p class="course-desc">OSI model, TCP/IP, subnetting, DNS, DHCP, VLANs, routing, switching, wireless, and network troubleshooting.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 24 hours</span>
+              <span class="course-modules">46 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="networking">
+          <div class="course-thumb thumb-net"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-net">NETWORKING</span>
+              <span class="course-level">ADVANCED</span>
+            </div>
+            <div class="course-title">Cisco CCNA to CCNP</div>
+            <p class="course-desc">Complete Cisco routing and switching from CCNA to CCNP. OSPF, BGP, MPLS, QoS, SD-WAN, and network automation.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 52 hours</span>
+              <span class="course-modules">96 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="networking">
+          <div class="course-thumb thumb-net"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-net">NETWORKING</span>
+              <span class="course-level">INTERMEDIATE</span>
+            </div>
+            <div class="course-title">Firewall & VPN Engineering</div>
+            <p class="course-desc">pfSense, Fortinet, Palo Alto firewalls. Site-to-site IPsec, SSL VPN, next-gen firewall policies, and IDS/IPS tuning.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 18 hours</span>
+              <span class="course-modules">38 modules</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card" data-track="networking">
+          <div class="course-thumb thumb-net"></div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-track ct-net">NETWORKING</span>
+              <span class="course-level">ADVANCED</span>
+            </div>
+            <div class="course-title">Wireshark & Packet Analysis</div>
+            <p class="course-desc">Deep-dive packet capture and analysis. Protocol dissection, capturing credentials, detecting anomalies, and forensic network analysis.</p>
+            <div class="course-footer">
+              <span class="course-duration">⏱ 14 hours</span>
+              <span class="course-modules">30 modules</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

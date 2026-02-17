@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Road Map | CodeTheBox</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-bracket">[</span><span class="logo-text">CTB</span><span class="logo-bracket">]</span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="courses.html" class="nav-item"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="roadmap.html" class="nav-item active"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="labs.html" class="nav-item"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="certifications.html" class="nav-item"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="resources.html" class="nav-item"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="community.html" class="nav-item"><span class="nav-icon">◉</span><span>Community</span></a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
+      <li><a href="courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
+      <li><a href="courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb"><span class="bc-root">codethebox</span><span class="bc-sep"> / </span><span class="bc-current">roadmap</span></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_roadmap --track" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+    <section class="page-header">
+      <div class="page-tag">// YOUR PATH TO MASTERY</div>
+      <h1 class="page-title">Learning Road Map</h1>
+      <p class="page-sub">Structured paths for each domain. Start at your level, follow the sequence, earn certifications along the way.</p>
+    </section>
+    <section class="roadmap-section">
+      <div class="roadmap-tracks">
+        <button class="rm-track-btn active-security" data-rm="security">🔐 Security Path</button>
+        <button class="rm-track-btn" data-rm="cloud">☁️ Cloud Path</button>
+        <button class="rm-track-btn" data-rm="infra">🖥️ Infrastructure Path</button>
+        <button class="rm-track-btn" data-rm="networking">🌐 Networking Path</button>
+      </div>
+
+      <!-- Security Path -->
+      <div class="rm-content" data-rm="security">
+        <div class="roadmap-timeline">
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 01 — Foundation</div>
+            <div class="rm-phase-title">Security Fundamentals</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">IT & Networking Basics</div><div class="rm-module-type">Core Prereq</div><div class="rm-module-status status-complete">Complete</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">Linux Command Line Essentials</div><div class="rm-module-type">Core</div><div class="rm-module-status status-complete">Complete</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">CIA Triad & Security Principles</div><div class="rm-module-type">Theory</div><div class="rm-module-status status-complete">Complete</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">CompTIA Security+ (SY0-701)</div><div class="rm-module-type">Certification Prep</div><div class="rm-module-status status-active">In Progress</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 02 — Analyst</div>
+            <div class="rm-phase-title">SOC & Threat Detection</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">SIEM Operations with Splunk / ELK</div><div class="rm-module-type">Hands-On</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">Log Analysis & Threat Hunting</div><div class="rm-module-type">Hands-On</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">Incident Response Playbooks</div><div class="rm-module-type">Methodology</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">CompTIA CySA+ (CS0-003)</div><div class="rm-module-type">Certification Prep</div><div class="rm-module-status status-optional">Optional</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 03 — Offensive</div>
+            <div class="rm-phase-title">Penetration Testing</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">Recon & OSINT Techniques</div><div class="rm-module-type">Offensive</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">Exploitation with Metasploit</div><div class="rm-module-type">Offensive</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">Active Directory Attacks</div><div class="rm-module-type">Offensive</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">Buffer Overflows & Exploit Dev</div><div class="rm-module-type">Advanced</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">OSCP Certification (OffSec)</div><div class="rm-module-type">Certification</div><div class="rm-module-status status-locked">Locked</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 04 — Architecture</div>
+            <div class="rm-phase-title">Security Engineering</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">Zero Trust Architecture Design</div><div class="rm-module-type">Architecture</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">Cloud Security (AWS/Azure)</div><div class="rm-module-type">Cloud Sec</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--sec-color)"></div><div class="rm-module-name">GRC: NIST, ISO 27001, SOC 2</div><div class="rm-module-type">Compliance</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">CISSP Certification</div><div class="rm-module-type">Certification</div><div class="rm-module-status status-locked">Locked</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cloud Path -->
+      <div class="rm-content" data-rm="cloud" style="display:none">
+        <div class="roadmap-timeline">
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 01 — Foundation</div>
+            <div class="rm-phase-title">Cloud Fundamentals</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">Networking & Linux Basics</div><div class="rm-module-type">Prereq</div><div class="rm-module-status status-complete">Complete</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">AWS Cloud Practitioner (CLF-C02)</div><div class="rm-module-type">Certification Prep</div><div class="rm-module-status status-active">In Progress</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">Core AWS Services: EC2, S3, VPC, IAM</div><div class="rm-module-type">Hands-On</div><div class="rm-module-status status-locked">Locked</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 02 — Associate</div>
+            <div class="rm-phase-title">Solutions Architecture</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">High Availability & Fault Tolerance</div><div class="rm-module-type">Architecture</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">AWS Solutions Architect Associate</div><div class="rm-module-type">Certification Prep</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">Terraform for AWS</div><div class="rm-module-type">IaC</div><div class="rm-module-status status-optional">Optional</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 03 — Professional</div>
+            <div class="rm-phase-title">DevOps & Cloud Native</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">Docker & Kubernetes on AWS</div><div class="rm-module-type">Containers</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">CI/CD with AWS CodePipeline</div><div class="rm-module-type">DevOps</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">AWS DevOps Engineer Professional</div><div class="rm-module-type">Certification</div><div class="rm-module-status status-locked">Locked</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 04 — Specialty</div>
+            <div class="rm-phase-title">Cloud Security</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">AWS Security Specialty (SCS-C02)</div><div class="rm-module-type">Certification</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--cloud-color)"></div><div class="rm-module-name">Multi-Cloud: Azure & GCP</div><div class="rm-module-type">Advanced</div><div class="rm-module-status status-optional">Optional</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infrastructure Path -->
+      <div class="rm-content" data-rm="infra" style="display:none">
+        <div class="roadmap-timeline">
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 01 — Foundation</div>
+            <div class="rm-phase-title">OS & Systems Basics</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">CompTIA A+ Core Concepts</div><div class="rm-module-type">Foundation</div><div class="rm-module-status status-complete">Complete</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">Linux Fundamentals (LPIC-1)</div><div class="rm-module-type">Certification Prep</div><div class="rm-module-status status-active">In Progress</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">Windows Server 2022 Basics</div><div class="rm-module-type">Core</div><div class="rm-module-status status-locked">Locked</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 02 — Virtualization</div>
+            <div class="rm-phase-title">Hypervisors & Containers</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">VMware vSphere / ESXi</div><div class="rm-module-type">Virtualization</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">Docker from Zero to Prod</div><div class="rm-module-type">Containers</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">Ansible Automation</div><div class="rm-module-type">IaC</div><div class="rm-module-status status-optional">Optional</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 03 — Engineering</div>
+            <div class="rm-phase-title">Site Reliability & Monitoring</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">Prometheus & Grafana Monitoring</div><div class="rm-module-type">Observability</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">CI/CD Pipeline Engineering</div><div class="rm-module-type">DevOps</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--infra-color)"></div><div class="rm-module-name">Red Hat RHCSA / RHCE</div><div class="rm-module-type">Certification</div><div class="rm-module-status status-locked">Locked</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Networking Path -->
+      <div class="rm-content" data-rm="networking" style="display:none">
+        <div class="roadmap-timeline">
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 01 — Foundation</div>
+            <div class="rm-phase-title">Network Fundamentals</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">OSI Model & TCP/IP Stack</div><div class="rm-module-type">Theory</div><div class="rm-module-status status-complete">Complete</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">Subnetting & IP Addressing</div><div class="rm-module-type">Core Skill</div><div class="rm-module-status status-active">In Progress</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">CompTIA Network+</div><div class="rm-module-type">Certification</div><div class="rm-module-status status-locked">Locked</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 02 — Routing & Switching</div>
+            <div class="rm-phase-title">Cisco CCNA</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">VLANs, STP, EtherChannel</div><div class="rm-module-type">Switching</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">OSPF & EIGRP Routing</div><div class="rm-module-type">Routing</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">Cisco CCNA 200-301</div><div class="rm-module-type">Certification</div><div class="rm-module-status status-locked">Locked</div></div>
+            </div>
+          </div>
+          <div class="rm-phase">
+            <div class="rm-phase-label">Phase 03 — Advanced</div>
+            <div class="rm-phase-title">CCNP & BGP</div>
+            <div class="rm-modules">
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">BGP Route Policies & Communities</div><div class="rm-module-type">Advanced Routing</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">MPLS & SD-WAN</div><div class="rm-module-type">WAN</div><div class="rm-module-status status-locked">Locked</div></div>
+              <div class="rm-module"><div class="rm-module-dot" style="background:var(--net-color)"></div><div class="rm-module-name">Cisco CCNP Enterprise</div><div class="rm-module-type">Certification</div><div class="rm-module-status status-locked">Locked</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

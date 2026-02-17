@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeTheBox | ITC · Security · Cloud · Infrastructure</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+  <!-- Animated BG Grid -->
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+
+  <!-- Sidebar Nav -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">CTB</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item active" data-page="dashboard">
+        <span class="nav-icon">⬡</span><span>Dashboard</span>
+      </a></li>
+      <li><a href="courses.html" class="nav-item" data-page="courses">
+        <span class="nav-icon">◈</span><span>Courses</span>
+      </a></li>
+      <li><a href="roadmap.html" class="nav-item" data-page="roadmap">
+        <span class="nav-icon">◎</span><span>Road Map</span>
+      </a></li>
+      <li><a href="labs.html" class="nav-item" data-page="labs">
+        <span class="nav-icon">⬕</span><span>Labs</span>
+      </a></li>
+      <li><a href="certifications.html" class="nav-item" data-page="certs">
+        <span class="nav-icon">◆</span><span>Certifications</span>
+      </a></li>
+      <li><a href="resources.html" class="nav-item" data-page="resources">
+        <span class="nav-icon">⬗</span><span>Resources</span>
+      </a></li>
+      <li><a href="community.html" class="nav-item" data-page="community">
+        <span class="nav-icon">◉</span><span>Community</span>
+      </a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="courses.html?track=security" class="nav-item track-item">
+        <span class="track-dot security"></span><span>Security</span>
+      </a></li>
+      <li><a href="courses.html?track=cloud" class="nav-item track-item">
+        <span class="track-dot cloud"></span><span>Cloud</span>
+      </a></li>
+      <li><a href="courses.html?track=infra" class="nav-item track-item">
+        <span class="track-dot infra"></span><span>Infrastructure</span>
+      </a></li>
+      <li><a href="courses.html?track=networking" class="nav-item track-item">
+        <span class="track-dot networking"></span><span>Networking</span>
+      </a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status">
+        <span class="status-dot pulse"></span>
+        <span class="status-text">Systems Online</span>
+      </div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+
+  <!-- Mobile toggle -->
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb">
+          <span class="bc-root">codethebox</span>
+          <span class="bc-sep"> / </span>
+          <span class="bc-current">dashboard</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_modules --all" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-tag">// WELCOME TO THE BOX</div>
+      <h1 class="hero-title">
+        Master the Stack.<br/>
+        <span class="accent-text">Own the System.</span>
+      </h1>
+      <p class="hero-sub">Technical training for ITC professionals — from zero-trust security to cloud-native infrastructure. No fluff. Just real skills.</p>
+      <div class="hero-cta">
+        <a href="roadmap.html" class="btn-primary">Start Learning →</a>
+        <a href="courses.html" class="btn-ghost">Browse Courses</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">240+</span>
+          <span class="stat-label">Modules</span>
+        </div>
+        <div class="stat-sep">|</div>
+        <div class="stat-item">
+          <span class="stat-num">18</span>
+          <span class="stat-label">Cert Paths</span>
+        </div>
+        <div class="stat-sep">|</div>
+        <div class="stat-item">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Live Labs</span>
+        </div>
+        <div class="stat-sep">|</div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Core Tracks</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Grid -->
+    <section class="dashboard-grid">
+      <!-- Track Cards -->
+      <div class="section-header">
+        <h2 class="section-title"><span class="prompt">$</span> core_tracks <span class="blink">_</span></h2>
+        <a href="courses.html" class="view-all">view --all</a>
+      </div>
+
+      <div class="track-cards">
+        <div class="track-card security-card">
+          <div class="card-header">
+            <div class="card-icon">🔐</div>
+            <div class="card-tag sec-tag">SECURITY</div>
+          </div>
+          <h3>Cybersecurity & InfoSec</h3>
+          <p>Penetration testing, threat modeling, SOC operations, SIEM, zero-trust, compliance frameworks.</p>
+          <div class="card-meta">
+            <span class="meta-item">62 modules</span>
+            <span class="meta-sep">·</span>
+            <span class="meta-item">Beginner → Expert</span>
+          </div>
+          <a href="courses.html?track=security" class="card-cta">Enter Track →</a>
+          <div class="card-accent-line security-line"></div>
+        </div>
+
+        <div class="track-card cloud-card">
+          <div class="card-header">
+            <div class="card-icon">☁️</div>
+            <div class="card-tag cloud-tag">CLOUD</div>
+          </div>
+          <h3>Cloud Platforms</h3>
+          <p>AWS, Azure, GCP — architecture, DevOps, IaC with Terraform, Kubernetes, serverless & cost ops.</p>
+          <div class="card-meta">
+            <span class="meta-item">74 modules</span>
+            <span class="meta-sep">·</span>
+            <span class="meta-item">Beginner → Expert</span>
+          </div>
+          <a href="courses.html?track=cloud" class="card-cta">Enter Track →</a>
+          <div class="card-accent-line cloud-line"></div>
+        </div>
+
+        <div class="track-card infra-card">
+          <div class="card-header">
+            <div class="card-icon">🖥️</div>
+            <div class="card-tag infra-tag">INFRA</div>
+          </div>
+          <h3>Infrastructure & Ops</h3>
+          <p>Linux, Windows Server, virtualization, Docker, CI/CD pipelines, monitoring & automation.</p>
+          <div class="card-meta">
+            <span class="meta-item">58 modules</span>
+            <span class="meta-sep">·</span>
+            <span class="meta-item">Beginner → Expert</span>
+          </div>
+          <a href="courses.html?track=infra" class="card-cta">Enter Track →</a>
+          <div class="card-accent-line infra-line"></div>
+        </div>
+
+        <div class="track-card net-card">
+          <div class="card-header">
+            <div class="card-icon">🌐</div>
+            <div class="card-tag net-tag">NETWORKING</div>
+          </div>
+          <h3>Networking & Protocols</h3>
+          <p>TCP/IP, routing, switching, SDN, firewalls, VPNs, BGP, OSPF, and packet-level analysis.</p>
+          <div class="card-meta">
+            <span class="meta-item">46 modules</span>
+            <span class="meta-sep">·</span>
+            <span class="meta-item">Beginner → Expert</span>
+          </div>
+          <a href="courses.html?track=networking" class="card-cta">Enter Track →</a>
+          <div class="card-accent-line net-line"></div>
+        </div>
+      </div>
+
+      <!-- Featured + Activity Row -->
+      <div class="two-col-grid">
+        <!-- Featured Course -->
+        <div class="panel featured-panel">
+          <div class="panel-header">
+            <span class="panel-title"><span class="prompt">></span> featured_course</span>
+            <span class="badge-new">NEW</span>
+          </div>
+          <div class="featured-content">
+            <div class="featured-meta">AWS · Advanced · 24hrs</div>
+            <h3 class="featured-title">AWS Security Specialty Bootcamp</h3>
+            <p class="featured-desc">Master AWS IAM, GuardDuty, Security Hub, and encryption at rest/in-transit. Prep for the SCS-C02 exam with hands-on labs.</p>
+            <div class="featured-tags">
+              <span class="tag">IAM</span>
+              <span class="tag">GuardDuty</span>
+              <span class="tag">KMS</span>
+              <span class="tag">CloudTrail</span>
+            </div>
+            <a href="courses.html" class="btn-primary sm">Start Course →</a>
+          </div>
+        </div>
+
+        <!-- Quick Stats Panel -->
+        <div class="panel stats-panel">
+          <div class="panel-header">
+            <span class="panel-title"><span class="prompt">></span> learning_metrics</span>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-bar-wrap">
+                <div class="metric-label">Security Track</div>
+                <div class="metric-pct">62%</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill security-fill" style="width:62%"></div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-bar-wrap">
+                <div class="metric-label">Cloud Fundamentals</div>
+                <div class="metric-pct">38%</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill cloud-fill" style="width:38%"></div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-bar-wrap">
+                <div class="metric-label">Linux Admin</div>
+                <div class="metric-pct">85%</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill infra-fill" style="width:85%"></div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-bar-wrap">
+                <div class="metric-label">Networking Basics</div>
+                <div class="metric-pct">20%</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill net-fill" style="width:20%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="xp-bar-section">
+            <div class="xp-label">XP Level: <span class="xp-level">Apprentice [Lv.4]</span></div>
+            <div class="xp-bar-outer">
+              <div class="xp-bar-inner" style="width:44%"></div>
+            </div>
+            <div class="xp-sub">2,200 / 5,000 XP</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Modules + Upcoming Labs -->
+      <div class="two-col-grid">
+        <!-- Recent -->
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title"><span class="prompt">></span> recent_modules</span>
+            <a href="courses.html" class="view-all sm">all →</a>
+          </div>
+          <ul class="module-list">
+            <li class="module-item">
+              <span class="module-status done">✓</span>
+              <div class="module-info">
+                <div class="module-name">Zero Trust Architecture</div>
+                <div class="module-track sec-text">Security · Module 7</div>
+              </div>
+              <span class="module-time">2h 15m</span>
+            </li>
+            <li class="module-item">
+              <span class="module-status done">✓</span>
+              <div class="module-info">
+                <div class="module-name">Kubernetes Hardening</div>
+                <div class="module-track cloud-text">Cloud · Module 12</div>
+              </div>
+              <span class="module-time">3h 40m</span>
+            </li>
+            <li class="module-item">
+              <span class="module-status active">▶</span>
+              <div class="module-info">
+                <div class="module-name">Terraform State Management</div>
+                <div class="module-track cloud-text">Cloud · Module 13</div>
+              </div>
+              <span class="module-time">1h 20m</span>
+            </li>
+            <li class="module-item">
+              <span class="module-status locked">◌</span>
+              <div class="module-info">
+                <div class="module-name">AWS VPC Deep Dive</div>
+                <div class="module-track cloud-text">Cloud · Module 14</div>
+              </div>
+              <span class="module-time">2h 50m</span>
+            </li>
+            <li class="module-item">
+              <span class="module-status locked">◌</span>
+              <div class="module-info">
+                <div class="module-name">Incident Response Playbook</div>
+                <div class="module-track sec-text">Security · Module 8</div>
+              </div>
+              <span class="module-time">1h 55m</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Upcoming Labs -->
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title"><span class="prompt">></span> upcoming_labs</span>
+            <a href="labs.html" class="view-all sm">all →</a>
+          </div>
+          <ul class="module-list">
+            <li class="module-item lab-item">
+              <div class="lab-icon">⚗️</div>
+              <div class="module-info">
+                <div class="module-name">Deploy a WAF on AWS</div>
+                <div class="module-track cloud-text">Cloud Lab · 45 min · Live Env</div>
+              </div>
+              <span class="lab-badge">NEW</span>
+            </li>
+            <li class="module-item lab-item">
+              <div class="lab-icon">⚗️</div>
+              <div class="module-info">
+                <div class="module-name">Pentest: Metasploit Basics</div>
+                <div class="module-track sec-text">Security Lab · 90 min · CTF</div>
+              </div>
+              <span class="lab-badge">HOT</span>
+            </li>
+            <li class="module-item lab-item">
+              <div class="lab-icon">⚗️</div>
+              <div class="module-info">
+                <div class="module-name">Configure pfSense Firewall</div>
+                <div class="module-track infra-text">Infra Lab · 60 min · VM</div>
+              </div>
+              <span class="lab-badge">→</span>
+            </li>
+            <li class="module-item lab-item">
+              <div class="lab-icon">⚗️</div>
+              <div class="module-info">
+                <div class="module-name">ELK Stack SIEM Setup</div>
+                <div class="module-track sec-text">Security Lab · 2 hrs · Docker</div>
+              </div>
+              <span class="lab-badge">→</span>
+            </li>
+            <li class="module-item lab-item">
+              <div class="lab-icon">⚗️</div>
+              <div class="module-info">
+                <div class="module-name">BGP Route Leak Simulation</div>
+                <div class="module-track net-text">Network Lab · 75 min · GNS3</div>
+              </div>
+              <span class="lab-badge">→</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cert Paths Row -->
+      <div class="section-header mt">
+        <h2 class="section-title"><span class="prompt">$</span> certification_paths <span class="blink">_</span></h2>
+        <a href="certifications.html" class="view-all">view --all</a>
+      </div>
+      <div class="cert-cards">
+        <div class="cert-card">
+          <div class="cert-vendor">CompTIA</div>
+          <div class="cert-name">Security+</div>
+          <div class="cert-desc">Entry-level security certification. Covers threats, cryptography, PKI, and identity management.</div>
+          <div class="cert-meta"><span class="c-badge beginner">Beginner</span> · 45 modules</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-vendor">AWS</div>
+          <div class="cert-name">Solutions Architect Pro</div>
+          <div class="cert-desc">Advanced cloud architecture for AWS environments. High-availability, cost optimization, migrations.</div>
+          <div class="cert-meta"><span class="c-badge advanced">Advanced</span> · 68 modules</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-vendor">Offensive Security</div>
+          <div class="cert-name">OSCP</div>
+          <div class="cert-desc">Hands-on pentesting certification. Buffer overflows, privilege escalation, Active Directory attacks.</div>
+          <div class="cert-meta"><span class="c-badge expert">Expert</span> · 82 modules</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-vendor">HashiCorp</div>
+          <div class="cert-name">Terraform Associate</div>
+          <div class="cert-desc">Infrastructure as Code fundamentals. Modules, state, workspaces, and provider configuration.</div>
+          <div class="cert-meta"><span class="c-badge intermediate">Intermediate</span> · 34 modules</div>
+        </div>
+      </div>
+
+    </section><!-- end dashboard-grid -->
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

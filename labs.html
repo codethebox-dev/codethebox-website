@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Labs | CodeTheBox</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-bracket">[</span><span class="logo-text">CTB</span><span class="logo-bracket">]</span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="courses.html" class="nav-item"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="roadmap.html" class="nav-item"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="labs.html" class="nav-item active"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="certifications.html" class="nav-item"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="resources.html" class="nav-item"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="community.html" class="nav-item"><span class="nav-icon">◉</span><span>Community</span></a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
+      <li><a href="courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
+      <li><a href="courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb"><span class="bc-root">codethebox</span><span class="bc-sep"> / </span><span class="bc-current">labs</span></div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_labs --all" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+    <section class="page-header">
+      <div class="page-tag">// HANDS-ON ENVIRONMENTS</div>
+      <h1 class="page-title">Live Labs</h1>
+      <p class="page-sub">50+ browser-based lab environments. No setup required. Spin up VMs, Docker containers, cloud sandboxes, and CTF challenges in seconds.</p>
+    </section>
+    <section class="page-content">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-track="all">ALL LABS</button>
+        <button class="filter-btn sec" data-track="security">🔐 Security</button>
+        <button class="filter-btn cloud" data-track="cloud">☁️ Cloud</button>
+        <button class="filter-btn infra" data-track="infra">🖥️ Infra</button>
+        <button class="filter-btn net" data-track="networking">🌐 Network</button>
+      </div>
+      <div class="labs-grid">
+
+        <div class="lab-card" data-track="security">
+          <span class="lab-card-icon">⚔️</span>
+          <div class="lab-card-title">Metasploit: Beginner CTF</div>
+          <p class="lab-card-desc">Learn Metasploit basics in a safe, legal environment. Scan, exploit, and gain shell access on a deliberately vulnerable VM.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">Metasploit</span>
+            <span class="lab-tag">CTF</span>
+            <span class="lab-tag">Kali Linux</span>
+            <span class="lab-tag">Exploitation</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 90 min</span>
+            <span class="lab-difficulty diff-hard">● Hard</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="cloud">
+          <span class="lab-card-icon">🛡️</span>
+          <div class="lab-card-title">Deploy AWS WAF + CloudFront</div>
+          <p class="lab-card-desc">Set up an AWS WAF with managed rule groups, configure CloudFront distribution, and test against simulated OWASP attacks.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">AWS WAF</span>
+            <span class="lab-tag">CloudFront</span>
+            <span class="lab-tag">OWASP</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 45 min</span>
+            <span class="lab-difficulty diff-medium">● Medium</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="infra">
+          <span class="lab-card-icon">🐧</span>
+          <div class="lab-card-title">Linux Privilege Escalation</div>
+          <p class="lab-card-desc">Identify and exploit common Linux privilege escalation vectors: SUID binaries, cron jobs, writable sudoers, and PATH hijacking.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">Linux</span>
+            <span class="lab-tag">PrivEsc</span>
+            <span class="lab-tag">Bash</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 60 min</span>
+            <span class="lab-difficulty diff-hard">● Hard</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="security">
+          <span class="lab-card-icon">📊</span>
+          <div class="lab-card-title">ELK SIEM Stack Setup</div>
+          <p class="lab-card-desc">Deploy Elasticsearch, Logstash, and Kibana with Docker. Ingest firewall and auth logs, build dashboards, and write detection rules.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">ELK Stack</span>
+            <span class="lab-tag">SIEM</span>
+            <span class="lab-tag">Docker</span>
+            <span class="lab-tag">Detection</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 2 hrs</span>
+            <span class="lab-difficulty diff-medium">● Medium</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="cloud">
+          <span class="lab-card-icon">🏗️</span>
+          <div class="lab-card-title">Terraform: Deploy 3-Tier AWS App</div>
+          <p class="lab-card-desc">Write Terraform code to provision a VPC, public/private subnets, an EC2 fleet with ALB, and RDS. Implement remote state in S3.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">Terraform</span>
+            <span class="lab-tag">AWS</span>
+            <span class="lab-tag">VPC</span>
+            <span class="lab-tag">RDS</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 90 min</span>
+            <span class="lab-difficulty diff-medium">● Medium</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="networking">
+          <span class="lab-card-icon">🔍</span>
+          <div class="lab-card-title">Wireshark Packet Analysis</div>
+          <p class="lab-card-desc">Capture live traffic in a sandboxed network. Analyze HTTP, DNS, and TLS sessions. Identify suspicious packets and reconstruct sessions.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">Wireshark</span>
+            <span class="lab-tag">PCAP</span>
+            <span class="lab-tag">Forensics</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 75 min</span>
+            <span class="lab-difficulty diff-easy">● Easy</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="networking">
+          <span class="lab-card-icon">🔥</span>
+          <div class="lab-card-title">pfSense Firewall Configuration</div>
+          <p class="lab-card-desc">Deploy pfSense in a GNS3 environment. Configure NAT, firewall rules, VLANs, and a site-to-site IPsec VPN between two networks.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">pfSense</span>
+            <span class="lab-tag">IPsec</span>
+            <span class="lab-tag">VPN</span>
+            <span class="lab-tag">GNS3</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 60 min</span>
+            <span class="lab-difficulty diff-medium">● Medium</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="infra">
+          <span class="lab-card-icon">⚙️</span>
+          <div class="lab-card-title">Ansible Automation Workshop</div>
+          <p class="lab-card-desc">Write Ansible playbooks to provision and configure 5 Linux servers. Deploy Nginx, manage users, push SSH keys, and harden the OS.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">Ansible</span>
+            <span class="lab-tag">Linux</span>
+            <span class="lab-tag">Automation</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 90 min</span>
+            <span class="lab-difficulty diff-medium">● Medium</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="cloud">
+          <span class="lab-card-icon">🚀</span>
+          <div class="lab-card-title">Kubernetes: Deploy & Scale App</div>
+          <p class="lab-card-desc">Deploy a containerized microservice app to a live Kubernetes cluster. Configure HPA, Ingress, NetworkPolicies, and RBAC roles.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">Kubernetes</span>
+            <span class="lab-tag">Helm</span>
+            <span class="lab-tag">RBAC</span>
+            <span class="lab-tag">HPA</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 2 hrs</span>
+            <span class="lab-difficulty diff-hard">● Hard</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="security">
+          <span class="lab-card-icon">🕵️</span>
+          <div class="lab-card-title">Active Directory: Attack & Defend</div>
+          <p class="lab-card-desc">Full AD lab: enumerate users, exploit Kerberoasting, pass-the-hash, and DCSync. Then harden against each attack vector.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">Active Directory</span>
+            <span class="lab-tag">Kerberoast</span>
+            <span class="lab-tag">BloodHound</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 3 hrs</span>
+            <span class="lab-difficulty diff-hard">● Hard</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="infra">
+          <span class="lab-card-icon">📈</span>
+          <div class="lab-card-title">Prometheus + Grafana Monitoring</div>
+          <p class="lab-card-desc">Stand up a full observability stack. Scrape metrics from Linux nodes and Docker containers. Build dashboards and configure alerting rules.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">Prometheus</span>
+            <span class="lab-tag">Grafana</span>
+            <span class="lab-tag">Alertmanager</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 90 min</span>
+            <span class="lab-difficulty diff-easy">● Easy</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+        <div class="lab-card" data-track="networking">
+          <span class="lab-card-icon">🔄</span>
+          <div class="lab-card-title">BGP Route Leak Simulation</div>
+          <p class="lab-card-desc">Simulate a BGP route leak in a GNS3 topology with 4 autonomous systems. Implement route filtering, communities, and monitoring with looking glass.</p>
+          <div class="lab-tags">
+            <span class="lab-tag">BGP</span>
+            <span class="lab-tag">GNS3</span>
+            <span class="lab-tag">Route Policy</span>
+          </div>
+          <div class="lab-footer">
+            <span class="lab-duration">⏱ 75 min</span>
+            <span class="lab-difficulty diff-hard">● Hard</span>
+            <button class="lab-start-btn">START LAB</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
