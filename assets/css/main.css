@@ -35,9 +35,9 @@
   --radius:        8px;
   --radius-lg:     14px;
 
-  --font-display: 'Barlow Condensed', sans-serif;
-  --font-mono:    'JetBrains Mono', 'Space Mono', monospace;
-  --font-ui:      'Space Mono', monospace;
+  --font-display: 'JetBrains Mono', monospace;
+  --font-mono:    'JetBrains Mono', monospace;
+  --font-ui:      'JetBrains Mono', monospace;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -98,10 +98,9 @@ body {
 .sidebar-logo {
   display: flex;
   align-items: center;
-  gap: 0;
-  padding: 20px 20px 18px;
+  padding: 22px 20px 20px;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .logo-bracket {
@@ -114,13 +113,13 @@ body {
 
 .logo-text {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: 0px;
-  text-transform: lowercase;
-  line-height: 1.2;
+  letter-spacing: -0.3px;
+  line-height: 1;
 }
+
 .logo-text .logo-tld {
   color: var(--accent);
 }
@@ -350,12 +349,12 @@ body {
 }
 
 .hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(42px, 6vw, 80px);
-  font-weight: 900;
-  line-height: 1.0;
+  font-family: var(--font-mono);
+  font-size: clamp(32px, 4.5vw, 58px);
+  font-weight: 700;
+  line-height: 1.08;
   color: var(--text-primary);
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
   margin-bottom: 16px;
 }
 
@@ -543,12 +542,12 @@ body {
 .net-tag   { background: var(--net-dim);   color: var(--net-color);   border: 1px solid var(--net-color);  }
 
 .track-card h3 {
-  font-family: var(--font-display);
-  font-size: 19px;
-  font-weight: 800;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 8px;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.5px;
 }
 
 .track-card p {
@@ -648,12 +647,13 @@ body {
 }
 
 .featured-title {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 800;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 10px;
-  line-height: 1.2;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
 }
 
 .featured-desc {
@@ -874,11 +874,12 @@ body {
 }
 
 .cert-name {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 800;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 8px;
+  letter-spacing: -0.3px;
 }
 
 .cert-desc {
@@ -926,11 +927,11 @@ body {
 }
 
 .page-title {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 5vw, 52px);
-  font-weight: 900;
+  font-family: var(--font-mono);
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
   margin-bottom: 8px;
 }
 
@@ -2108,4 +2109,253 @@ body {
   .course-hero {
     padding: 28px 20px 24px;
   }
+}
+
+/* =============================================
+   BOARD / KANBAN VIEW — Courses Page
+   ============================================= */
+
+.board-view {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: start;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.board-column {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.board-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.board-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.board-col-count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1px 8px;
+}
+
+.board-col-stripe {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+}
+.stripe-sec  { background: linear-gradient(90deg, var(--sec-color), transparent); }
+.stripe-cloud { background: linear-gradient(90deg, var(--cloud-color), transparent); }
+.stripe-infra { background: linear-gradient(90deg, var(--infra-color), transparent); }
+.stripe-net  { background: linear-gradient(90deg, var(--net-color), transparent); }
+
+.board-cards {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 14px 12px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.board-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.board-card-level {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.board-card-level::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.lvl-beginner::before     { background: var(--net-color); }
+.lvl-intermediate::before { background: var(--cloud-color); }
+.lvl-advanced::before     { background: var(--infra-color); }
+.lvl-expert::before       { background: var(--sec-color); box-shadow: 0 0 6px var(--sec-color); }
+
+.lvl-beginner     { color: var(--net-color); }
+.lvl-intermediate { color: var(--cloud-color); }
+.lvl-advanced     { color: var(--infra-color); }
+.lvl-expert       { color: var(--sec-color); }
+
+.board-card-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
+}
+
+.board-card-desc {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-sec);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.board-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.board-card-meta {
+  display: flex;
+  gap: 8px;
+}
+
+.board-meta-pill {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--text-dim);
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.board-card-arrow {
+  font-size: 10px;
+  color: var(--text-dim);
+  transition: all 0.15s;
+}
+.board-card:hover .board-card-arrow {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
+.board-card-accent {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+}
+
+/* view toggle */
+.view-toggle {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.vt-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 1px;
+}
+
+.vt-btn.active, .vt-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* grid stays when toggled */
+.courses-grid.hidden, .board-view.hidden { display: none; }
+
+@media (max-width: 1100px) {
+  .board-view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .board-view {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================
+   FONT FIXES — ensure JetBrains Mono everywhere
+   ============================================= */
+.section-title, .cert-name-full, .rm-phase-title,
+.course-hero-title, .instructor-name,
+.lab-card-title, .post-title, .resource-title {
+  font-family: var(--font-mono) !important;
+  letter-spacing: -0.5px;
+}
+
+.cert-name-full {
+  font-size: 17px;
+  font-weight: 700;
+}
+.rm-phase-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.course-hero-title {
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+.lab-card-title, .post-title {
+  font-size: 15px;
+  font-weight: 700;
 }

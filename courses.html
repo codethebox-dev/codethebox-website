@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Courses | CodeTheBox</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 <body>
@@ -13,32 +13,32 @@
   <div class="scan-line"></div>
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-logo">
-      <span class="logo-text">codethebox<span class="logo-tld">.dev</span></span>
+      <span class="logo-bracket">{</span><span class="logo-text">codethebox<span class="logo-tld">.dev</span></span><span class="logo-bracket">}</span>
     </div>
     <div class="nav-label">NAVIGATION</div>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-item" data-page="dashboard"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
-      <li><a href="courses.html" class="nav-item active" data-page="courses"><span class="nav-icon">◈</span><span>Courses</span></a></li>
-      <li><a href="roadmap.html" class="nav-item" data-page="roadmap"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
-      <li><a href="labs.html" class="nav-item" data-page="labs"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
-      <li><a href="certifications.html" class="nav-item" data-page="certs"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
-      <li><a href="resources.html" class="nav-item" data-page="resources"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
-      <li><a href="community.html" class="nav-item" data-page="community"><span class="nav-icon">◉</span><span>Community</span></a></li>
+      <li><a href="index.html" class="nav-item"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="courses.html" class="nav-item active"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="roadmap.html" class="nav-item"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="labs.html" class="nav-item"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="certifications.html" class="nav-item"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="resources.html" class="nav-item"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="community.html" class="nav-item"><span class="nav-icon">◉</span><span>Community</span></a></li>
     </ul>
     <div class="nav-divider"></div>
     <div class="nav-label">TRACKS</div>
     <ul class="nav-links">
-      <li><a href="courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
-      <li><a href="courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
-      <li><a href="courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
-      <li><a href="courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+      <li><a href="#col-security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="#col-cloud"    class="nav-item track-item"><span class="track-dot cloud"></span>   <span>Cloud</span></a></li>
+      <li><a href="#col-infra"   class="nav-item track-item"><span class="track-dot infra"></span>   <span>Infrastructure</span></a></li>
+      <li><a href="#col-net"     class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
     </ul>
     <div class="sidebar-footer">
       <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
       <div class="version">v2.0.1 // 2025</div>
     </div>
   </nav>
-  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+  <button class="mobile-menu-btn" id="menuBtn">&#9776;</button>
   <main class="main-content">
     <header class="top-bar">
       <div class="top-bar-left">
@@ -46,8 +46,8 @@
       </div>
       <div class="top-bar-right">
         <div class="search-box">
-          <input type="text" placeholder="search_courses --all" class="search-input"/>
-          <span class="search-icon">⌕</span>
+          <input type="text" placeholder="search_courses --all" class="search-input" id="searchInput"/>
+          <span class="search-icon">&#8981;</span>
         </div>
         <div class="user-chip">
           <span class="user-avatar">0x</span>
@@ -58,277 +58,349 @@
     <section class="page-header">
       <div class="page-tag">// ALL MODULES</div>
       <h1 class="page-title">Course Library</h1>
-      <p class="page-sub">240+ modules across four core tracks. Filter by domain or level. Real-world labs included.</p>
+      <p class="page-sub">240+ modules across four core tracks. Hands-on labs and cert paths included.</p>
     </section>
     <section class="page-content">
       <div class="filter-bar">
         <button class="filter-btn active" data-track="all">ALL</button>
-        <button class="filter-btn sec" data-track="security">🔐 Security</button>
-        <button class="filter-btn cloud" data-track="cloud">☁️ Cloud</button>
-        <button class="filter-btn infra" data-track="infra">🖥️ Infrastructure</button>
-        <button class="filter-btn net" data-track="networking">🌐 Networking</button>
+        <button class="filter-btn sec"   data-track="security">&#x1F510; Security</button>
+        <button class="filter-btn cloud" data-track="cloud">&#x2601;&#xFE0F; Cloud</button>
+        <button class="filter-btn infra" data-track="infra">&#x1F5A5;&#xFE0F; Infrastructure</button>
+        <button class="filter-btn net"   data-track="networking">&#x1F310; Networking</button>
+        <div class="view-toggle">
+          <button class="vt-btn active" id="btnBoard" onclick="setView('board')">&#x2B1B; Board</button>
+          <button class="vt-btn"        id="btnGrid"  onclick="setView('grid')">&#x25A6; Grid</button>
+        </div>
       </div>
-      <div class="courses-grid">
 
-        <a href="courses/security-plus.html" class="course-card" data-track="security" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-sec"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-sec">SECURITY</span>
-              <span class="course-level">BEGINNER</span>
-            </div>
-            <div class="course-title">CompTIA Security+ Bootcamp</div>
-            <p class="course-desc">Full prep for the SY0-701 exam. Covers threats, vulnerabilities, cryptography, PKI, access control, and compliance.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 22 hours</span>
-              <span class="course-modules">45 modules</span>
-            </div>
+      <!-- BOARD VIEW -->
+      <div class="board-view" id="boardView">
+
+        <div class="board-column" id="col-security" data-track="security">
+          <div class="board-col-header">
+            <div class="board-col-title" style="color:var(--sec-color)">&#x1F510; Security</div>
+            <span class="board-col-count">4 courses</span>
+            <div class="board-col-stripe stripe-sec"></div>
+          </div>
+          <div class="board-cards">
+            <a href="courses/security-plus.html" class="board-card" data-track="security">
+              <div class="board-card-accent" style="background:var(--sec-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-beginner">Beginner</div>
+              <div class="board-card-title">CompTIA Security+ Bootcamp</div>
+              <div class="board-card-desc">Full SY0-701 prep &mdash; threats, cryptography, PKI, access control, compliance.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 22h</span>
+                  <span class="board-meta-pill">&#x2697; 8 labs</span>
+                  <span class="board-meta-pill">45 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/oscp-prep.html" class="board-card" data-track="security">
+              <div class="board-card-accent" style="background:var(--sec-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-expert">Expert</div>
+              <div class="board-card-title">OSCP Prep: Penetration Testing</div>
+              <div class="board-card-desc">BOF exploits, Active Directory attacks, privilege escalation, full pentest methodology.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 68h</span>
+                  <span class="board-meta-pill">&#x2697; 24 labs</span>
+                  <span class="board-meta-pill">82 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/soc-analyst.html" class="board-card" data-track="security">
+              <div class="board-card-accent" style="background:var(--sec-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-intermediate">Intermediate</div>
+              <div class="board-card-title">SOC Analyst: L1 to L2</div>
+              <div class="board-card-desc">SIEM triage, threat hunting, Splunk SPL, incident response, SOAR automation.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 34h</span>
+                  <span class="board-meta-pill">&#x2697; 14 labs</span>
+                  <span class="board-meta-pill">58 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/zero-trust.html" class="board-card" data-track="security">
+              <div class="board-card-accent" style="background:var(--sec-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-advanced">Advanced</div>
+              <div class="board-card-title">Zero Trust Architecture</div>
+              <div class="board-card-desc">Entra ID, Cloudflare Access, BeyondCorp, SASE, microsegmentation design.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 18h</span>
+                  <span class="board-meta-pill">&#x2697; 6 labs</span>
+                  <span class="board-meta-pill">36 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
           </div>
         </div>
 
-        <a href="courses/oscp-prep.html" class="course-card" data-track="security" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-sec"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-sec">SECURITY</span>
-              <span class="course-level">EXPERT</span>
-            </div>
-            <div class="course-title">OSCP Prep: Penetration Testing</div>
-            <p class="course-desc">Hands-on pentesting from enumeration to exploitation. Buffer overflows, Active Directory attacks, privilege escalation, report writing.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 68 hours</span>
-              <span class="course-modules">82 modules</span>
-            </div>
+        <div class="board-column" id="col-cloud" data-track="cloud">
+          <div class="board-col-header">
+            <div class="board-col-title" style="color:var(--cloud-color)">&#x2601;&#xFE0F; Cloud</div>
+            <span class="board-col-count">4 courses</span>
+            <div class="board-col-stripe stripe-cloud"></div>
+          </div>
+          <div class="board-cards">
+            <a href="courses/aws-cloud-practitioner.html" class="board-card" data-track="cloud">
+              <div class="board-card-accent" style="background:var(--cloud-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-beginner">Beginner</div>
+              <div class="board-card-title">AWS Cloud Practitioner</div>
+              <div class="board-card-desc">CLF-C02 &mdash; core services, IAM, billing, shared responsibility, Well-Architected.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 12h</span>
+                  <span class="board-meta-pill">&#x2697; 4 labs</span>
+                  <span class="board-meta-pill">28 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/aws-security-specialty.html" class="board-card" data-track="cloud">
+              <div class="board-card-accent" style="background:var(--cloud-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-advanced">Advanced</div>
+              <div class="board-card-title">AWS Security Specialty</div>
+              <div class="board-card-desc">SCS-C02 &mdash; IAM, GuardDuty, KMS, WAF, CloudTrail, compliance automation.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 24h</span>
+                  <span class="board-meta-pill">&#x2697; 12 labs</span>
+                  <span class="board-meta-pill">52 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/terraform.html" class="board-card" data-track="cloud">
+              <div class="board-card-accent" style="background:var(--cloud-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-intermediate">Intermediate</div>
+              <div class="board-card-title">Terraform from Zero to Hero</div>
+              <div class="board-card-desc">HCL, providers, modules, remote state, workspaces, CI/CD integration.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 16h</span>
+                  <span class="board-meta-pill">&#x2697; 10 labs</span>
+                  <span class="board-meta-pill">34 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/kubernetes.html" class="board-card" data-track="cloud">
+              <div class="board-card-accent" style="background:var(--cloud-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-advanced">Advanced</div>
+              <div class="board-card-title">Kubernetes Deep Dive</div>
+              <div class="board-card-desc">CKA + CKAD &mdash; workloads, networking, RBAC, Helm, GitOps with ArgoCD.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 40h</span>
+                  <span class="board-meta-pill">&#x2697; 18 labs</span>
+                  <span class="board-meta-pill">74 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
           </div>
         </div>
 
-        <a href="courses/soc-analyst.html" class="course-card" data-track="security" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-sec"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-sec">SECURITY</span>
-              <span class="course-level">INTERMEDIATE</span>
-            </div>
-            <div class="course-title">SOC Analyst: L1 to L2</div>
-            <p class="course-desc">SIEM operations, alert triage, threat hunting, log analysis, incident response playbooks, and SOAR automation.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 34 hours</span>
-              <span class="course-modules">58 modules</span>
-            </div>
+        <div class="board-column" id="col-infra" data-track="infra">
+          <div class="board-col-header">
+            <div class="board-col-title" style="color:var(--infra-color)">&#x1F5A5;&#xFE0F; Infrastructure</div>
+            <span class="board-col-count">4 courses</span>
+            <div class="board-col-stripe stripe-infra"></div>
+          </div>
+          <div class="board-cards">
+            <a href="courses/linux-admin.html" class="board-card" data-track="infra">
+              <div class="board-card-accent" style="background:var(--infra-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-beginner">Beginner</div>
+              <div class="board-card-title">Linux Administration Fundamentals</div>
+              <div class="board-card-desc">LPIC-1 + RHCSA &mdash; filesystem, permissions, systemd, networking, Bash scripting.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 28h</span>
+                  <span class="board-meta-pill">&#x2697; 14 labs</span>
+                  <span class="board-meta-pill">58 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/windows-server.html" class="board-card" data-track="infra">
+              <div class="board-card-accent" style="background:var(--infra-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-intermediate">Intermediate</div>
+              <div class="board-card-title">Windows Server 2022 Admin</div>
+              <div class="board-card-desc">Active Directory, Group Policy, DNS, DHCP, Hyper-V and PowerShell automation.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 32h</span>
+                  <span class="board-meta-pill">&#x2697; 14 labs</span>
+                  <span class="board-meta-pill">62 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/docker-containers.html" class="board-card" data-track="infra">
+              <div class="board-card-accent" style="background:var(--infra-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-intermediate">Intermediate</div>
+              <div class="board-card-title">Docker &amp; Container Security</div>
+              <div class="board-card-desc">Build, scan, harden &mdash; Trivy, Falco, CIS Docker Benchmark, runtime security.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 20h</span>
+                  <span class="board-meta-pill">&#x2697; 12 labs</span>
+                  <span class="board-meta-pill">44 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/cicd-pipelines.html" class="board-card" data-track="infra">
+              <div class="board-card-accent" style="background:var(--infra-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-advanced">Advanced</div>
+              <div class="board-card-title">CI/CD Pipeline Engineering</div>
+              <div class="board-card-desc">GitHub Actions, GitLab CI, SAST gates, ArgoCD GitOps, DevSecOps pipelines.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 24h</span>
+                  <span class="board-meta-pill">&#x2697; 12 labs</span>
+                  <span class="board-meta-pill">48 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
           </div>
         </div>
 
-        <a href="courses/zero-trust.html" class="course-card" data-track="security" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-sec"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-sec">SECURITY</span>
-              <span class="course-level">ADVANCED</span>
-            </div>
-            <div class="course-title">Zero Trust Architecture</div>
-            <p class="course-desc">Implement zero trust with Microsoft Entra, BeyondCorp, Cloudflare Access, and SASE frameworks in enterprise environments.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 18 hours</span>
-              <span class="course-modules">36 modules</span>
-            </div>
+        <div class="board-column" id="col-net" data-track="networking">
+          <div class="board-col-header">
+            <div class="board-col-title" style="color:var(--net-color)">&#x1F310; Networking</div>
+            <span class="board-col-count">4 courses</span>
+            <div class="board-col-stripe stripe-net"></div>
+          </div>
+          <div class="board-cards">
+            <a href="courses/network-plus.html" class="board-card" data-track="networking">
+              <div class="board-card-accent" style="background:var(--net-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-beginner">Beginner</div>
+              <div class="board-card-title">CompTIA Network+ Complete</div>
+              <div class="board-card-desc">OSI model, TCP/IP, subnetting, VLANs, routing, wireless, packet analysis.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 24h</span>
+                  <span class="board-meta-pill">&#x2697; 8 labs</span>
+                  <span class="board-meta-pill">46 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/cisco-ccna.html" class="board-card" data-track="networking">
+              <div class="board-card-accent" style="background:var(--net-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-advanced">Advanced</div>
+              <div class="board-card-title">Cisco CCNA to CCNP</div>
+              <div class="board-card-desc">Full Cisco track &mdash; OSPF, BGP, MPLS, QoS, SD-WAN, Python automation.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 52h</span>
+                  <span class="board-meta-pill">&#x2697; 22 labs</span>
+                  <span class="board-meta-pill">96 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/firewall-vpn.html" class="board-card" data-track="networking">
+              <div class="board-card-accent" style="background:var(--net-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-intermediate">Intermediate</div>
+              <div class="board-card-title">Firewall &amp; VPN Engineering</div>
+              <div class="board-card-desc">pfSense, FortiGate, Palo Alto NGFW, site-to-site IPsec, SSL VPN, IDS/IPS.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 18h</span>
+                  <span class="board-meta-pill">&#x2697; 10 labs</span>
+                  <span class="board-meta-pill">38 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="courses/wireshark.html" class="board-card" data-track="networking">
+              <div class="board-card-accent" style="background:var(--net-color);opacity:0.5"></div>
+              <div class="board-card-level lvl-advanced">Advanced</div>
+              <div class="board-card-title">Wireshark &amp; Packet Analysis</div>
+              <div class="board-card-desc">Capture filters, TLS decryption, forensic PCAP analysis, credential extraction.</div>
+              <div class="board-card-footer">
+                <div class="board-card-meta">
+                  <span class="board-meta-pill">&#x23F1; 14h</span>
+                  <span class="board-meta-pill">&#x2697; 10 labs</span>
+                  <span class="board-meta-pill">30 mod</span>
+                </div>
+                <span class="board-card-arrow">&rarr;</span>
+              </div>
+            </a>
           </div>
         </div>
 
-        <a href="courses/aws-cloud-practitioner.html" class="course-card" data-track="cloud" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-cloud"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-cloud">CLOUD</span>
-              <span class="course-level">BEGINNER</span>
-            </div>
-            <div class="course-title">AWS Cloud Practitioner</div>
-            <p class="course-desc">Start your cloud journey. Core AWS services, pricing, billing, global infrastructure, and the shared responsibility model.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 12 hours</span>
-              <span class="course-modules">28 modules</span>
-            </div>
-          </div>
-        </div>
+      </div><!-- /board-view -->
 
-        <a href="courses/aws-security-specialty.html" class="course-card" data-track="cloud" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-cloud"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-cloud">CLOUD</span>
-              <span class="course-level">ADVANCED</span>
-            </div>
-            <div class="course-title">AWS Security Specialty</div>
-            <p class="course-desc">IAM deep dive, GuardDuty, Security Hub, AWS WAF, encryption with KMS, CloudTrail auditing, and compliance automation.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 24 hours</span>
-              <span class="course-modules">52 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/terraform.html" class="course-card" data-track="cloud" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-cloud"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-cloud">CLOUD</span>
-              <span class="course-level">INTERMEDIATE</span>
-            </div>
-            <div class="course-title">Terraform from Zero to Hero</div>
-            <p class="course-desc">IaC with HashiCorp Terraform. Modules, remote state, workspaces, Terraform Cloud, and multi-cloud deployments.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 16 hours</span>
-              <span class="course-modules">34 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/kubernetes.html" class="course-card" data-track="cloud" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-cloud"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-cloud">CLOUD</span>
-              <span class="course-level">ADVANCED</span>
-            </div>
-            <div class="course-title">Kubernetes Deep Dive</div>
-            <p class="course-desc">CKA and CKAD prep. Pods, deployments, networking, storage, RBAC, Helm charts, GitOps with ArgoCD and Flux.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 40 hours</span>
-              <span class="course-modules">74 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/linux-admin.html" class="course-card" data-track="infra" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-infra"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-infra">INFRA</span>
-              <span class="course-level">BEGINNER</span>
-            </div>
-            <div class="course-title">Linux Administration Fundamentals</div>
-            <p class="course-desc">LPIC-1 and RHCSA prep. File systems, permissions, processes, networking, systemd, scripting, and package management.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 28 hours</span>
-              <span class="course-modules">58 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/windows-server.html" class="course-card" data-track="infra" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-infra"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-infra">INFRA</span>
-              <span class="course-level">INTERMEDIATE</span>
-            </div>
-            <div class="course-title">Windows Server 2022 Administration</div>
-            <p class="course-desc">Active Directory, Group Policy, DNS, DHCP, Hyper-V, Windows Server hardening, and MCSA exam preparation.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 32 hours</span>
-              <span class="course-modules">62 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/docker-containers.html" class="course-card" data-track="infra" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-infra"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-infra">INFRA</span>
-              <span class="course-level">INTERMEDIATE</span>
-            </div>
-            <div class="course-title">Docker & Container Security</div>
-            <p class="course-desc">Container fundamentals, Docker Compose, image hardening, vulnerability scanning, runtime security with Falco and Trivy.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 20 hours</span>
-              <span class="course-modules">44 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/cicd-pipelines.html" class="course-card" data-track="infra" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-infra"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-infra">INFRA</span>
-              <span class="course-level">ADVANCED</span>
-            </div>
-            <div class="course-title">CI/CD Pipeline Engineering</div>
-            <p class="course-desc">Build, test, and deploy pipelines using GitHub Actions, GitLab CI, Jenkins, ArgoCD. DevSecOps integration and SAST/DAST.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 24 hours</span>
-              <span class="course-modules">48 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/network-plus.html" class="course-card" data-track="networking" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-net"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-net">NETWORKING</span>
-              <span class="course-level">BEGINNER</span>
-            </div>
-            <div class="course-title">CompTIA Network+ Complete</div>
-            <p class="course-desc">OSI model, TCP/IP, subnetting, DNS, DHCP, VLANs, routing, switching, wireless, and network troubleshooting.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 24 hours</span>
-              <span class="course-modules">46 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/cisco-ccna.html" class="course-card" data-track="networking" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-net"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-net">NETWORKING</span>
-              <span class="course-level">ADVANCED</span>
-            </div>
-            <div class="course-title">Cisco CCNA to CCNP</div>
-            <p class="course-desc">Complete Cisco routing and switching from CCNA to CCNP. OSPF, BGP, MPLS, QoS, SD-WAN, and network automation.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 52 hours</span>
-              <span class="course-modules">96 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/firewall-vpn.html" class="course-card" data-track="networking" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-net"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-net">NETWORKING</span>
-              <span class="course-level">INTERMEDIATE</span>
-            </div>
-            <div class="course-title">Firewall & VPN Engineering</div>
-            <p class="course-desc">pfSense, Fortinet, Palo Alto firewalls. Site-to-site IPsec, SSL VPN, next-gen firewall policies, and IDS/IPS tuning.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 18 hours</span>
-              <span class="course-modules">38 modules</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="courses/wireshark.html" class="course-card" data-track="networking" style="display:block;text-decoration:none;">
-          <div class="course-thumb thumb-net"></div>
-          <div class="course-body">
-            <div class="course-meta">
-              <span class="course-track ct-net">NETWORKING</span>
-              <span class="course-level">ADVANCED</span>
-            </div>
-            <div class="course-title">Wireshark & Packet Analysis</div>
-            <p class="course-desc">Deep-dive packet capture and analysis. Protocol dissection, capturing credentials, detecting anomalies, and forensic network analysis.</p>
-            <div class="course-footer">
-              <span class="course-duration">⏱ 14 hours</span>
-              <span class="course-modules">30 modules</span>
-            </div>
-          </div>
-        </a>
-
+      <!-- GRID VIEW (hidden by default) -->
+      <div class="courses-grid hidden" id="gridView">
+        <a href="courses/security-plus.html" class="course-card" data-track="security" style="display:block;text-decoration:none;"><div class="course-thumb thumb-sec"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-sec">SECURITY</span><span class="course-level">BEGINNER</span></div><div class="course-title">CompTIA Security+ Bootcamp</div><p class="course-desc">Full SY0-701 prep. Threats, cryptography, PKI, access control, and compliance frameworks.</p><div class="course-footer"><span class="course-duration">22h</span><span class="course-modules">45 modules</span></div></div></a>
+        <a href="courses/oscp-prep.html" class="course-card" data-track="security" style="display:block;text-decoration:none;"><div class="course-thumb thumb-sec"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-sec">SECURITY</span><span class="course-level">EXPERT</span></div><div class="course-title">OSCP Prep: Penetration Testing</div><p class="course-desc">BOF exploits, Active Directory attacks, privilege escalation, and pentest report writing.</p><div class="course-footer"><span class="course-duration">68h</span><span class="course-modules">82 modules</span></div></div></a>
+        <a href="courses/soc-analyst.html" class="course-card" data-track="security" style="display:block;text-decoration:none;"><div class="course-thumb thumb-sec"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-sec">SECURITY</span><span class="course-level">INTERMEDIATE</span></div><div class="course-title">SOC Analyst: L1 to L2</div><p class="course-desc">SIEM operations, threat hunting, Splunk SPL, incident response, SOAR automation.</p><div class="course-footer"><span class="course-duration">34h</span><span class="course-modules">58 modules</span></div></div></a>
+        <a href="courses/zero-trust.html" class="course-card" data-track="security" style="display:block;text-decoration:none;"><div class="course-thumb thumb-sec"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-sec">SECURITY</span><span class="course-level">ADVANCED</span></div><div class="course-title">Zero Trust Architecture</div><p class="course-desc">Entra ID, Cloudflare Access, SASE, and enterprise zero-trust design patterns.</p><div class="course-footer"><span class="course-duration">18h</span><span class="course-modules">36 modules</span></div></div></a>
+        <a href="courses/aws-cloud-practitioner.html" class="course-card" data-track="cloud" style="display:block;text-decoration:none;"><div class="course-thumb thumb-cloud"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-cloud">CLOUD</span><span class="course-level">BEGINNER</span></div><div class="course-title">AWS Cloud Practitioner</div><p class="course-desc">CLF-C02 &mdash; core services, billing, shared responsibility, Well-Architected Framework.</p><div class="course-footer"><span class="course-duration">12h</span><span class="course-modules">28 modules</span></div></div></a>
+        <a href="courses/aws-security-specialty.html" class="course-card" data-track="cloud" style="display:block;text-decoration:none;"><div class="course-thumb thumb-cloud"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-cloud">CLOUD</span><span class="course-level">ADVANCED</span></div><div class="course-title">AWS Security Specialty</div><p class="course-desc">SCS-C02 &mdash; IAM, GuardDuty, KMS encryption, WAF, CloudTrail and compliance.</p><div class="course-footer"><span class="course-duration">24h</span><span class="course-modules">52 modules</span></div></div></a>
+        <a href="courses/terraform.html" class="course-card" data-track="cloud" style="display:block;text-decoration:none;"><div class="course-thumb thumb-cloud"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-cloud">CLOUD</span><span class="course-level">INTERMEDIATE</span></div><div class="course-title">Terraform from Zero to Hero</div><p class="course-desc">HCL, modules, remote state, workspaces, Terraform Cloud, multi-cloud deployments.</p><div class="course-footer"><span class="course-duration">16h</span><span class="course-modules">34 modules</span></div></div></a>
+        <a href="courses/kubernetes.html" class="course-card" data-track="cloud" style="display:block;text-decoration:none;"><div class="course-thumb thumb-cloud"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-cloud">CLOUD</span><span class="course-level">ADVANCED</span></div><div class="course-title">Kubernetes Deep Dive</div><p class="course-desc">CKA + CKAD &mdash; workloads, networking, RBAC, Helm charts, GitOps with ArgoCD.</p><div class="course-footer"><span class="course-duration">40h</span><span class="course-modules">74 modules</span></div></div></a>
+        <a href="courses/linux-admin.html" class="course-card" data-track="infra" style="display:block;text-decoration:none;"><div class="course-thumb thumb-infra"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-infra">INFRA</span><span class="course-level">BEGINNER</span></div><div class="course-title">Linux Administration Fundamentals</div><p class="course-desc">LPIC-1 + RHCSA &mdash; filesystem, permissions, systemd, networking, Bash scripting.</p><div class="course-footer"><span class="course-duration">28h</span><span class="course-modules">58 modules</span></div></div></a>
+        <a href="courses/windows-server.html" class="course-card" data-track="infra" style="display:block;text-decoration:none;"><div class="course-thumb thumb-infra"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-infra">INFRA</span><span class="course-level">INTERMEDIATE</span></div><div class="course-title">Windows Server 2022 Admin</div><p class="course-desc">Active Directory, Group Policy, DNS, DHCP, Hyper-V and PowerShell automation.</p><div class="course-footer"><span class="course-duration">32h</span><span class="course-modules">62 modules</span></div></div></a>
+        <a href="courses/docker-containers.html" class="course-card" data-track="infra" style="display:block;text-decoration:none;"><div class="course-thumb thumb-infra"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-infra">INFRA</span><span class="course-level">INTERMEDIATE</span></div><div class="course-title">Docker &amp; Container Security</div><p class="course-desc">Build, scan, harden &mdash; Trivy, Falco, CIS Docker Benchmark, runtime security.</p><div class="course-footer"><span class="course-duration">20h</span><span class="course-modules">44 modules</span></div></div></a>
+        <a href="courses/cicd-pipelines.html" class="course-card" data-track="infra" style="display:block;text-decoration:none;"><div class="course-thumb thumb-infra"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-infra">INFRA</span><span class="course-level">ADVANCED</span></div><div class="course-title">CI/CD Pipeline Engineering</div><p class="course-desc">GitHub Actions, GitLab CI, SAST gates, ArgoCD GitOps, full DevSecOps pipelines.</p><div class="course-footer"><span class="course-duration">24h</span><span class="course-modules">48 modules</span></div></div></a>
+        <a href="courses/network-plus.html" class="course-card" data-track="networking" style="display:block;text-decoration:none;"><div class="course-thumb thumb-net"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-net">NETWORKING</span><span class="course-level">BEGINNER</span></div><div class="course-title">CompTIA Network+ Complete</div><p class="course-desc">OSI model, TCP/IP, subnetting, VLANs, routing, wireless, packet analysis.</p><div class="course-footer"><span class="course-duration">24h</span><span class="course-modules">46 modules</span></div></div></a>
+        <a href="courses/cisco-ccna.html" class="course-card" data-track="networking" style="display:block;text-decoration:none;"><div class="course-thumb thumb-net"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-net">NETWORKING</span><span class="course-level">ADVANCED</span></div><div class="course-title">Cisco CCNA to CCNP</div><p class="course-desc">Full Cisco track &mdash; OSPF, BGP, MPLS, QoS, SD-WAN, Python automation.</p><div class="course-footer"><span class="course-duration">52h</span><span class="course-modules">96 modules</span></div></div></a>
+        <a href="courses/firewall-vpn.html" class="course-card" data-track="networking" style="display:block;text-decoration:none;"><div class="course-thumb thumb-net"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-net">NETWORKING</span><span class="course-level">INTERMEDIATE</span></div><div class="course-title">Firewall &amp; VPN Engineering</div><p class="course-desc">pfSense, FortiGate, Palo Alto NGFW, site-to-site IPsec, SSL VPN, IDS/IPS.</p><div class="course-footer"><span class="course-duration">18h</span><span class="course-modules">38 modules</span></div></div></a>
+        <a href="courses/wireshark.html" class="course-card" data-track="networking" style="display:block;text-decoration:none;"><div class="course-thumb thumb-net"></div><div class="course-body"><div class="course-meta"><span class="course-track ct-net">NETWORKING</span><span class="course-level">ADVANCED</span></div><div class="course-title">Wireshark &amp; Packet Analysis</div><p class="course-desc">Capture filters, TLS decryption, forensic PCAP analysis, credential extraction.</p><div class="course-footer"><span class="course-duration">14h</span><span class="course-modules">30 modules</span></div></div></a>
       </div>
+
     </section>
   </main>
+
   <script src="assets/js/main.js"></script>
+  <script>
+    function setView(mode) {
+      const board = document.getElementById('boardView');
+      const grid  = document.getElementById('gridView');
+      const btnB  = document.getElementById('btnBoard');
+      const btnG  = document.getElementById('btnGrid');
+      if (mode === 'board') {
+        board.classList.remove('hidden'); grid.classList.add('hidden');
+        btnB.classList.add('active');     btnG.classList.remove('active');
+      } else {
+        grid.classList.remove('hidden');  board.classList.add('hidden');
+        btnG.classList.add('active');     btnB.classList.remove('active');
+      }
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const track = btn.dataset.track;
+        document.querySelectorAll('.board-column').forEach(col => {
+          col.style.display = (!track || track === 'all' || col.dataset.track === track) ? '' : 'none';
+        });
+        document.querySelectorAll('#gridView .course-card').forEach(card => {
+          card.style.display = (!track || track === 'all' || card.dataset.track === track) ? '' : 'none';
+        });
+      });
+    });
+
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const q = this.value.toLowerCase();
+      document.querySelectorAll('.board-card, #gridView .course-card').forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
