@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linux Administration Fundamentals | CodeTheBox</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-text">codethebox<span class="logo-tld">.dev</span></span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+
+      <li><a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="../courses.html" class="nav-item active"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="../roadmap.html" class="nav-item"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="../labs.html" class="nav-item"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="../certifications.html" class="nav-item"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="../resources.html" class="nav-item"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="../community.html" class="nav-item"><span class="nav-icon">◉</span><span>Community</span></a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="../courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="../courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
+      <li><a href="../courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
+      <li><a href="../courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb">
+          <span class="bc-root">codethebox</span>
+          <span class="bc-sep"> / </span>
+          <a href="../courses.html" style="color:var(--text-dim);text-decoration:none;">courses</a>
+          <span class="bc-sep"> / </span>
+          <span class="bc-current">linux-admin</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_courses --all" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Course Hero -->
+    <section class="course-hero">
+      <a href="../courses.html" class="course-hero-back">← Back to Courses</a>
+      <div class="course-hero-track ct-infra" style="color:var(--infra-color)">INFRASTRUCTURE</div>
+      <h1 class="course-hero-title">Linux Administration Fundamentals</h1>
+      <p class="course-hero-desc">Master Linux from the ground up. This course covers the command line, file systems, permissions, processes, networking, systemd, package management, shell scripting, and system hardening. Aligned to both LPIC-1 and RHCSA exam objectives.</p>
+      <div class="course-hero-meta">
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value"><span class="c-badge beginner">Beginner</span></span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">28 hours</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Modules</span>
+          <span class="meta-value">58</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Live Labs</span>
+          <span class="meta-value">14</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Quizzes</span>
+          <span class="meta-value">12</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Certification</span>
+          <span class="meta-value" style="font-size:11px;color:var(--accent)">LPIC-1 & RHCSA</span>
+        </div>
+      </div>
+      <div class="course-hero-tags">
+        <span class="tag">Linux</span><span class="tag">LPIC-1</span><span class="tag">RHCSA</span><span class="tag">Bash</span><span class="tag">systemd</span><span class="tag">Networking</span><span class="tag">Shell Scripting</span>
+      </div>
+      <div class="course-hero-actions">
+        <a href="#curriculum" class="btn-primary">Start Learning →</a>
+        <a href="../labs.html" class="btn-ghost">View Related Labs</a>
+      </div>
+    </section>
+
+    <!-- Course Body -->
+    <div class="course-layout">
+      <div class="course-main">
+
+        <!-- What You'll Learn -->
+        <div class="course-section-title"><span class="prompt">$</span> what_youll_learn</div>
+        <div class="learn-grid">
+            <div class="learn-item"><span class="learn-check">✓</span>Navigate and operate the Linux command line fluently</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Manage files, directories, permissions, and ACLs</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Understand and control Linux processes and services</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Configure networking: static IPs, DNS, routing</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Manage users, groups, and authentication (PAM)</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Write effective Bash scripts for automation</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Install and manage packages with APT, YUM, and DNF</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Harden Linux systems and pass LPIC-1 / RHCSA</div>
+        </div>
+
+        <!-- Requirements -->
+        <div class="course-section-title"><span class="prompt">$</span> requirements</div>
+        <ul class="req-list">
+            <li class="req-item"><span class="req-bullet">▸</span>Access to a Linux machine or VM (Ubuntu or CentOS — we show you how to set it up)</li>
+            <li class="req-item"><span class="req-bullet">▸</span>No Linux experience required — we start with the absolute basics</li>
+        </ul>
+
+        <!-- Curriculum -->
+        <div class="course-section-title" id="curriculum"><span class="prompt">$</span> curriculum</div>
+        <div class="curriculum">
+        <div class="curriculum-section">
+          <div class="curriculum-header open" onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 01</span>
+              Getting Started
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons open">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Linux History & Distributions</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">18m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Setting Up a Lab: VirtualBox + Ubuntu</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">25m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">The Terminal & Basic Commands</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Navigate the Filesystem</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 02</span>
+              Files & Permissions
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">File System Hierarchy Standard</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">22m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">File Operations: cp, mv, ln, find</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Permissions: chmod, chown, umask, ACLs</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">32m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Permission Scenario Challenge</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">45m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 03</span>
+              Processes & Services
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Process Management: ps, top, kill, nice</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">systemd, Units & Service Management</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Scheduling: cron & at</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">20m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Build a systemd Service</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">40m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 04</span>
+              Networking
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">IP Addressing & Interface Config</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">DNS, /etc/hosts & resolv.conf</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">22m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">SSH Config & Key-Based Auth</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">25m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Firewalls: iptables & firewalld</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Configure Static Network + SSH</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">45m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 05</span>
+              Shell Scripting
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Bash Scripting Fundamentals</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">35m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Variables, Loops & Conditionals</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Functions & Error Handling</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">25m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Write a Server Health Monitor Script</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">60m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 06</span>
+              Exam Prep
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">📖</span>
+              <span class="lesson-name">LPIC-1 / RHCSA Domain Review</span>
+              <span class="lesson-type lt-read">READING</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">📝</span>
+              <span class="lesson-name">Practice Exam #1</span>
+              <span class="lesson-type lt-quiz">QUIZ</span>
+              <span class="lesson-duration">60m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">📝</span>
+              <span class="lesson-name">Practice Exam #2</span>
+              <span class="lesson-type lt-quiz">QUIZ</span>
+              <span class="lesson-duration">60m</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Instructor -->
+        <div class="course-section-title"><span class="prompt">$</span> instructor</div>
+        <div class="instructor-card">
+          <div class="instructor-avatar">👤</div>
+          <div class="instructor-info">
+            <div class="instructor-name">Marcus Webb</div>
+            <div class="instructor-title">RHCE · Linux Foundation Certified · 12yr Sysadmin</div>
+            <p class="instructor-bio">Linux systems engineer with 12 years managing enterprise RHEL, Ubuntu, and SUSE deployments. Contributed to open-source projects and trained 8,000+ Linux students.</p>
+          </div>
+        </div>
+
+      </div><!-- /.course-main -->
+
+      <!-- Sidebar -->
+      <aside class="course-sidebar">
+
+        <!-- Enroll Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Enroll</div>
+          <div class="widget-enroll">
+            <div class="enroll-price enroll-free">Free</div>
+            <a href="#curriculum" class="btn-primary" style="text-align:center;justify-content:center;">Start Now →</a>
+            <p class="enroll-note">Free with a CodeTheBox account. Labs and quizzes included. Completion certificate awarded.</p>
+          </div>
+        </div>
+
+        <!-- Course Info Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Course Info</div>
+          <div class="widget-stat">
+            <span class="ws-label">Duration</span>
+            <span class="ws-value">28 hours</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Modules</span>
+            <span class="ws-value">58</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Live Labs</span>
+            <span class="ws-value">14</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Quizzes</span>
+            <span class="ws-value">12</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Level</span>
+            <span class="ws-value">Beginner</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Certificate</span>
+            <span class="ws-value">Yes</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Language</span>
+            <span class="ws-value">English</span>
+          </div>
+        </div>
+
+        <!-- Related Courses Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Related Courses</div>
+          <a href="windows-server.html" class="related-card">
+            <div class="related-dot" style="background:var(--infra-color)"></div>
+            <div class="related-info">
+              <div class="related-title">Windows Server 2022 Administration</div>
+              <div class="related-meta">Infra · Intermediate</div>
+            </div>
+          </a>
+          <a href="docker-containers.html" class="related-card">
+            <div class="related-dot" style="background:var(--infra-color)"></div>
+            <div class="related-info">
+              <div class="related-title">Docker & Container Security</div>
+              <div class="related-meta">Infra · Intermediate</div>
+            </div>
+          </a>
+          <a href="../networking/network-plus.html" class="related-card">
+            <div class="related-dot" style="background:var(--net-color)"></div>
+            <div class="related-info">
+              <div class="related-title">CompTIA Network+ Complete</div>
+              <div class="related-meta">Networking · Beginner</div>
+            </div>
+          </a>
+        </div>
+
+      </aside>
+    </div><!-- /.course-layout -->
+
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Accordion toggle
+    function toggleSection(header) {
+      header.classList.toggle('open');
+      const lessons = header.nextElementSibling;
+      lessons.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OSCP Prep: Penetration Testing | CodeTheBox</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-text">codethebox<span class="logo-tld">.dev</span></span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+
+      <li><a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="../courses.html" class="nav-item active"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="../roadmap.html" class="nav-item"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="../labs.html" class="nav-item"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="../certifications.html" class="nav-item"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="../resources.html" class="nav-item"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="../community.html" class="nav-item"><span class="nav-icon">◉</span><span>Community</span></a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="../courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="../courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
+      <li><a href="../courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
+      <li><a href="../courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb">
+          <span class="bc-root">codethebox</span>
+          <span class="bc-sep"> / </span>
+          <a href="../courses.html" style="color:var(--text-dim);text-decoration:none;">courses</a>
+          <span class="bc-sep"> / </span>
+          <span class="bc-current">oscp-prep</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_courses --all" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Course Hero -->
+    <section class="course-hero">
+      <a href="../courses.html" class="course-hero-back">← Back to Courses</a>
+      <div class="course-hero-track ct-security" style="color:var(--sec-color)">SECURITY</div>
+      <h1 class="course-hero-title">OSCP Prep: Penetration Testing</h1>
+      <p class="course-hero-desc">The most comprehensive OSCP preparation course available. Covers every topic in the PEN-200 curriculum including buffer overflows, Active Directory attacks, web exploitation, privilege escalation, and report writing. 24 live lab challenges included.</p>
+      <div class="course-hero-meta">
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value"><span class="c-badge expert">Expert</span></span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">68 hours</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Modules</span>
+          <span class="meta-value">82</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Live Labs</span>
+          <span class="meta-value">24</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Quizzes</span>
+          <span class="meta-value">14</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Certification</span>
+          <span class="meta-value" style="font-size:11px;color:var(--accent)">OSCP (OffSec PEN-200)</span>
+        </div>
+      </div>
+      <div class="course-hero-tags">
+        <span class="tag">OSCP</span><span class="tag">Pentesting</span><span class="tag">Metasploit</span><span class="tag">Active Directory</span><span class="tag">Exploit Dev</span><span class="tag">Kali Linux</span>
+      </div>
+      <div class="course-hero-actions">
+        <a href="#curriculum" class="btn-primary">Start Learning →</a>
+        <a href="../labs.html" class="btn-ghost">View Related Labs</a>
+      </div>
+    </section>
+
+    <!-- Course Body -->
+    <div class="course-layout">
+      <div class="course-main">
+
+        <!-- What You'll Learn -->
+        <div class="course-section-title"><span class="prompt">$</span> what_youll_learn</div>
+        <div class="learn-grid">
+            <div class="learn-item"><span class="learn-check">✓</span>Perform systematic network and host enumeration</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Exploit known CVEs and custom vulnerabilities</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Develop stack-based buffer overflow exploits</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Attack and compromise Active Directory environments</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Escalate privileges on Linux and Windows systems</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Pivot through networks and use tunneling techniques</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Write professional penetration test reports</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Tackle OSCP exam scenarios with confidence</div>
+        </div>
+
+        <!-- Requirements -->
+        <div class="course-section-title"><span class="prompt">$</span> requirements</div>
+        <ul class="req-list">
+            <li class="req-item"><span class="req-bullet">▸</span>Solid Linux command-line skills (LPIC-1 level or above)</li>
+            <li class="req-item"><span class="req-bullet">▸</span>Basic networking knowledge — TCP/IP, DNS, HTTP</li>
+            <li class="req-item"><span class="req-bullet">▸</span>Familiarity with at least one scripting language (Python or Bash)</li>
+            <li class="req-item"><span class="req-bullet">▸</span>Security+ or equivalent foundational security knowledge</li>
+        </ul>
+
+        <!-- Curriculum -->
+        <div class="course-section-title" id="curriculum"><span class="prompt">$</span> curriculum</div>
+        <div class="curriculum">
+        <div class="curriculum-section">
+          <div class="curriculum-header open" onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 01</span>
+              Recon & Enumeration
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons open">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Methodology Overview & OSCP Mindset</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">20m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Nmap Port & Service Scanning</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">35m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Web App Enumeration with Gobuster</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">SMB & RPC Enumeration</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Full Machine Recon Challenge</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">90m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 02</span>
+              Exploitation
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Searchsploit & Exploit-DB</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">25m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Metasploit Framework Deep Dive</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">45m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Manual Exploitation Techniques</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">38m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Web Exploits: SQLi, File Upload, LFI/RFI</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">42m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Exploit 3 Vulnerable Machines</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">120m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 03</span>
+              Buffer Overflows
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Stack Memory & CPU Registers</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Fuzzing & Crash Analysis</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">35m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Controlling EIP & Finding Bad Chars</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">40m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Shellcode Generation & NOP Sleds</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">35m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Write a Complete BOF Exploit</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">90m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 04</span>
+              Active Directory
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">AD Architecture & Attack Surface</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Kerberoasting & AS-REP Roasting</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">35m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">BloodHound & SharpHound Enumeration</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Pass-the-Hash & Pass-the-Ticket</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">32m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">DCSync & Golden Ticket Attacks</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Full AD Domain Compromise</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">120m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 05</span>
+              Privilege Escalation
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Linux PrivEsc: SUID, Cron, PATH</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">40m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Windows PrivEsc: Services, Registry, UAC</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">40m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: 10 PrivEsc Challenges (Linux)</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">90m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: 10 PrivEsc Challenges (Windows)</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">90m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 06</span>
+              Reporting & Exam Strategy
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">📖</span>
+              <span class="lesson-name">Writing a Professional Pentest Report</span>
+              <span class="lesson-type lt-read">READING</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">OSCP Exam Strategy & Time Management</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">25m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Mock OSCP Exam (4 machines)</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">240m</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Instructor -->
+        <div class="course-section-title"><span class="prompt">$</span> instructor</div>
+        <div class="instructor-card">
+          <div class="instructor-avatar">👤</div>
+          <div class="instructor-info">
+            <div class="instructor-name">Dom Vasquez</div>
+            <div class="instructor-title">OSCP · OSWP · Red Team Operator</div>
+            <p class="instructor-bio">Red team operator with 8 years of offensive security experience. Has passed OSCP, OSWP, and contributed to multiple CVEs. Teaches hands-on hacking with real-world techniques.</p>
+          </div>
+        </div>
+
+      </div><!-- /.course-main -->
+
+      <!-- Sidebar -->
+      <aside class="course-sidebar">
+
+        <!-- Enroll Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Enroll</div>
+          <div class="widget-enroll">
+            <div class="enroll-price enroll-free">Free</div>
+            <a href="#curriculum" class="btn-primary" style="text-align:center;justify-content:center;">Start Now →</a>
+            <p class="enroll-note">Free with a CodeTheBox account. Labs and quizzes included. Completion certificate awarded.</p>
+          </div>
+        </div>
+
+        <!-- Course Info Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Course Info</div>
+          <div class="widget-stat">
+            <span class="ws-label">Duration</span>
+            <span class="ws-value">68 hours</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Modules</span>
+            <span class="ws-value">82</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Live Labs</span>
+            <span class="ws-value">24</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Quizzes</span>
+            <span class="ws-value">14</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Level</span>
+            <span class="ws-value">Expert</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Certificate</span>
+            <span class="ws-value">Yes</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Language</span>
+            <span class="ws-value">English</span>
+          </div>
+        </div>
+
+        <!-- Related Courses Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Related Courses</div>
+          <a href="soc-analyst.html" class="related-card">
+            <div class="related-dot" style="background:var(--sec-color)"></div>
+            <div class="related-info">
+              <div class="related-title">SOC Analyst: L1 to L2</div>
+              <div class="related-meta">Security · Intermediate</div>
+            </div>
+          </a>
+          <a href="zero-trust.html" class="related-card">
+            <div class="related-dot" style="background:var(--sec-color)"></div>
+            <div class="related-info">
+              <div class="related-title">Zero Trust Architecture</div>
+              <div class="related-meta">Security · Advanced</div>
+            </div>
+          </a>
+          <a href="security-plus.html" class="related-card">
+            <div class="related-dot" style="background:var(--sec-color)"></div>
+            <div class="related-info">
+              <div class="related-title">CompTIA Security+ Bootcamp</div>
+              <div class="related-meta">Security · Beginner</div>
+            </div>
+          </a>
+        </div>
+
+      </aside>
+    </div><!-- /.course-layout -->
+
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Accordion toggle
+    function toggleSection(header) {
+      header.classList.toggle('open');
+      const lessons = header.nextElementSibling;
+      lessons.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CompTIA Security+ Bootcamp | CodeTheBox</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-text">codethebox<span class="logo-tld">.dev</span></span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+
+      <li><a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="../courses.html" class="nav-item active"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="../roadmap.html" class="nav-item"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="../labs.html" class="nav-item"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="../certifications.html" class="nav-item"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="../resources.html" class="nav-item"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="../community.html" class="nav-item"><span class="nav-icon">◉</span><span>Community</span></a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="../courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="../courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
+      <li><a href="../courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
+      <li><a href="../courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb">
+          <span class="bc-root">codethebox</span>
+          <span class="bc-sep"> / </span>
+          <a href="../courses.html" style="color:var(--text-dim);text-decoration:none;">courses</a>
+          <span class="bc-sep"> / </span>
+          <span class="bc-current">security-plus</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_courses --all" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Course Hero -->
+    <section class="course-hero">
+      <a href="../courses.html" class="course-hero-back">← Back to Courses</a>
+      <div class="course-hero-track ct-security" style="color:var(--sec-color)">SECURITY</div>
+      <h1 class="course-hero-title">CompTIA Security+ Bootcamp</h1>
+      <p class="course-hero-desc">The definitive Security+ prep course. Covers all five exam domains: Threats, Attacks & Vulnerabilities; Technologies & Tools; Architecture & Design; Identity & Access Management; and Risk Management. Includes practice exams, flashcards, and a final mock exam under timed conditions.</p>
+      <div class="course-hero-meta">
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value"><span class="c-badge beginner">Beginner</span></span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">22 hours</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Modules</span>
+          <span class="meta-value">45</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Live Labs</span>
+          <span class="meta-value">8</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Quizzes</span>
+          <span class="meta-value">12</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Certification</span>
+          <span class="meta-value" style="font-size:11px;color:var(--accent)">CompTIA Security+ (SY0-701)</span>
+        </div>
+      </div>
+      <div class="course-hero-tags">
+        <span class="tag">CompTIA</span><span class="tag">Security+</span><span class="tag">Cryptography</span><span class="tag">PKI</span><span class="tag">Compliance</span><span class="tag">IAM</span>
+      </div>
+      <div class="course-hero-actions">
+        <a href="#curriculum" class="btn-primary">Start Learning →</a>
+        <a href="../labs.html" class="btn-ghost">View Related Labs</a>
+      </div>
+    </section>
+
+    <!-- Course Body -->
+    <div class="course-layout">
+      <div class="course-main">
+
+        <!-- What You'll Learn -->
+        <div class="course-section-title"><span class="prompt">$</span> what_youll_learn</div>
+        <div class="learn-grid">
+            <div class="learn-item"><span class="learn-check">✓</span>Identify and mitigate network and host-based threats</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Implement PKI and cryptographic solutions</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Configure and harden authentication systems</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Apply risk management and compliance frameworks</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Understand firewalls, IDS/IPS, and SIEM tools</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Analyze malware types and attack vectors</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Perform vulnerability scanning and assessment</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Pass the CompTIA SY0-701 exam with confidence</div>
+        </div>
+
+        <!-- Requirements -->
+        <div class="course-section-title"><span class="prompt">$</span> requirements</div>
+        <ul class="req-list">
+            <li class="req-item"><span class="req-bullet">▸</span>Basic IT literacy — familiar with Windows and Linux</li>
+            <li class="req-item"><span class="req-bullet">▸</span>Completed CompTIA A+ or equivalent experience</li>
+            <li class="req-item"><span class="req-bullet">▸</span>No security experience required — we start from scratch</li>
+        </ul>
+
+        <!-- Curriculum -->
+        <div class="course-section-title" id="curriculum"><span class="prompt">$</span> curriculum</div>
+        <div class="curriculum">
+        <div class="curriculum-section">
+          <div class="curriculum-header open" onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 01</span>
+              Foundations
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons open">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Course Introduction & Exam Blueprint</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">12m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">The CIA Triad & Security Concepts</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Threat Actor Types & Motivations</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">35m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Understanding Vulnerabilities</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">22m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">📝</span>
+              <span class="lesson-name">Knowledge Check: Foundations</span>
+              <span class="lesson-type lt-quiz">QUIZ</span>
+              <span class="lesson-duration">15m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 02</span>
+              Cryptography & PKI
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Symmetric vs Asymmetric Encryption</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">32m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Hashing Algorithms & Integrity</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">24m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">TLS/SSL Deep Dive</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">38m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">PKI & Certificate Authorities</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">29m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: OpenSSL Certificate Chain</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">45m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">📝</span>
+              <span class="lesson-name">Cryptography Quiz</span>
+              <span class="lesson-type lt-quiz">QUIZ</span>
+              <span class="lesson-duration">20m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 03</span>
+              Threats & Attacks
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Malware Types: Ransomware, Rootkits, RATs</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Social Engineering Techniques</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">26m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Network Attacks: MitM, DoS, Replay</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">34m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Application Attacks: SQLi, XSS, CSRF</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Capture the Flag — Attack Identification</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">60m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 04</span>
+              Architecture & Tools
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Network Security Components</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">33m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Firewalls, IDS/IPS, WAF</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">SIEM Overview with Splunk</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">25m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Zero Trust Architecture Overview</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">22m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Configure pfSense Rules</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">50m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 05</span>
+              Identity & Access
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Authentication Factors & MFA</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">24m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Directory Services & LDAP</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">20m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">OAuth 2.0 & SAML</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Privileged Access Management</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">18m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">📝</span>
+              <span class="lesson-name">Quiz: IAM Concepts</span>
+              <span class="lesson-type lt-quiz">QUIZ</span>
+              <span class="lesson-duration">15m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 06</span>
+              Exam Preparation
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">📖</span>
+              <span class="lesson-name">Domain Review & Exam Strategy</span>
+              <span class="lesson-type lt-read">READING</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">📝</span>
+              <span class="lesson-name">Practice Exam #1 (90 Questions)</span>
+              <span class="lesson-type lt-quiz">QUIZ</span>
+              <span class="lesson-duration">90m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">📝</span>
+              <span class="lesson-name">Practice Exam #2 (90 Questions)</span>
+              <span class="lesson-type lt-quiz">QUIZ</span>
+              <span class="lesson-duration">90m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">📝</span>
+              <span class="lesson-name">Final Mock Exam — Timed</span>
+              <span class="lesson-type lt-quiz">QUIZ</span>
+              <span class="lesson-duration">90m</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Instructor -->
+        <div class="course-section-title"><span class="prompt">$</span> instructor</div>
+        <div class="instructor-card">
+          <div class="instructor-avatar">👤</div>
+          <div class="instructor-info">
+            <div class="instructor-name">Alex Mercer</div>
+            <div class="instructor-title">CISSP · CEH · 10+ yrs Security Engineering</div>
+            <p class="instructor-bio">Former SOC lead at a Fortune 500. Holds CISSP, CEH, and Security+ certifications. Has trained 12,000+ students across security courses.</p>
+          </div>
+        </div>
+
+      </div><!-- /.course-main -->
+
+      <!-- Sidebar -->
+      <aside class="course-sidebar">
+
+        <!-- Enroll Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Enroll</div>
+          <div class="widget-enroll">
+            <div class="enroll-price enroll-free">Free</div>
+            <a href="#curriculum" class="btn-primary" style="text-align:center;justify-content:center;">Start Now →</a>
+            <p class="enroll-note">Free with a CodeTheBox account. Labs and quizzes included. Completion certificate awarded.</p>
+          </div>
+        </div>
+
+        <!-- Course Info Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Course Info</div>
+          <div class="widget-stat">
+            <span class="ws-label">Duration</span>
+            <span class="ws-value">22 hours</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Modules</span>
+            <span class="ws-value">45</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Live Labs</span>
+            <span class="ws-value">8</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Quizzes</span>
+            <span class="ws-value">12</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Level</span>
+            <span class="ws-value">Beginner</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Certificate</span>
+            <span class="ws-value">Yes</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Language</span>
+            <span class="ws-value">English</span>
+          </div>
+        </div>
+
+        <!-- Related Courses Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Related Courses</div>
+          <a href="soc-analyst.html" class="related-card">
+            <div class="related-dot" style="background:var(--sec-color)"></div>
+            <div class="related-info">
+              <div class="related-title">SOC Analyst: L1 to L2</div>
+              <div class="related-meta">Security · Intermediate</div>
+            </div>
+          </a>
+          <a href="zero-trust.html" class="related-card">
+            <div class="related-dot" style="background:var(--sec-color)"></div>
+            <div class="related-info">
+              <div class="related-title">Zero Trust Architecture</div>
+              <div class="related-meta">Security · Advanced</div>
+            </div>
+          </a>
+          <a href="../certifications.html" class="related-card">
+            <div class="related-dot" style="background:var(--accent)"></div>
+            <div class="related-info">
+              <div class="related-title">View All Certifications</div>
+              <div class="related-meta">18 paths available</div>
+            </div>
+          </a>
+        </div>
+
+      </aside>
+    </div><!-- /.course-layout -->
+
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Accordion toggle
+    function toggleSection(header) {
+      header.classList.toggle('open');
+      const lessons = header.nextElementSibling;
+      lessons.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

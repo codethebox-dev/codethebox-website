@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kubernetes Deep Dive | CodeTheBox</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scan-line"></div>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-text">codethebox<span class="logo-tld">.dev</span></span>
+    </div>
+    <div class="nav-label">NAVIGATION</div>
+    <ul class="nav-links">
+
+      <li><a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span><span>Dashboard</span></a></li>
+      <li><a href="../courses.html" class="nav-item active"><span class="nav-icon">◈</span><span>Courses</span></a></li>
+      <li><a href="../roadmap.html" class="nav-item"><span class="nav-icon">◎</span><span>Road Map</span></a></li>
+      <li><a href="../labs.html" class="nav-item"><span class="nav-icon">⬕</span><span>Labs</span></a></li>
+      <li><a href="../certifications.html" class="nav-item"><span class="nav-icon">◆</span><span>Certifications</span></a></li>
+      <li><a href="../resources.html" class="nav-item"><span class="nav-icon">⬗</span><span>Resources</span></a></li>
+      <li><a href="../community.html" class="nav-item"><span class="nav-icon">◉</span><span>Community</span></a></li>
+    </ul>
+    <div class="nav-divider"></div>
+    <div class="nav-label">TRACKS</div>
+    <ul class="nav-links">
+      <li><a href="../courses.html?track=security" class="nav-item track-item"><span class="track-dot security"></span><span>Security</span></a></li>
+      <li><a href="../courses.html?track=cloud" class="nav-item track-item"><span class="track-dot cloud"></span><span>Cloud</span></a></li>
+      <li><a href="../courses.html?track=infra" class="nav-item track-item"><span class="track-dot infra"></span><span>Infrastructure</span></a></li>
+      <li><a href="../courses.html?track=networking" class="nav-item track-item"><span class="track-dot networking"></span><span>Networking</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot pulse"></span><span class="status-text">Systems Online</span></div>
+      <div class="version">v2.0.1 // 2025</div>
+    </div>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn">☰</button>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div class="breadcrumb">
+          <span class="bc-root">codethebox</span>
+          <span class="bc-sep"> / </span>
+          <a href="../courses.html" style="color:var(--text-dim);text-decoration:none;">courses</a>
+          <span class="bc-sep"> / </span>
+          <span class="bc-current">kubernetes</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="search-box">
+          <input type="text" placeholder="search_courses --all" class="search-input"/>
+          <span class="search-icon">⌕</span>
+        </div>
+        <div class="user-chip">
+          <span class="user-avatar">0x</span>
+          <span class="user-label">Guest_User</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Course Hero -->
+    <section class="course-hero">
+      <a href="../courses.html" class="course-hero-back">← Back to Courses</a>
+      <div class="course-hero-track ct-cloud" style="color:var(--cloud-color)">CLOUD</div>
+      <h1 class="course-hero-title">Kubernetes Deep Dive</h1>
+      <p class="course-hero-desc">The most comprehensive Kubernetes course for the CKA and CKAD exams. From pods to production — covering workloads, networking, storage, RBAC, Helm, GitOps with ArgoCD, and Kubernetes security hardening.</p>
+      <div class="course-hero-meta">
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value"><span class="c-badge advanced">Advanced</span></span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">40 hours</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Modules</span>
+          <span class="meta-value">74</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Live Labs</span>
+          <span class="meta-value">18</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Quizzes</span>
+          <span class="meta-value">12</span>
+        </div>
+        <div class="course-hero-meta-item">
+          <span class="meta-label">Certification</span>
+          <span class="meta-value" style="font-size:11px;color:var(--accent)">CKA & CKAD</span>
+        </div>
+      </div>
+      <div class="course-hero-tags">
+        <span class="tag">Kubernetes</span><span class="tag">CKA</span><span class="tag">CKAD</span><span class="tag">Helm</span><span class="tag">ArgoCD</span><span class="tag">RBAC</span><span class="tag">GitOps</span>
+      </div>
+      <div class="course-hero-actions">
+        <a href="#curriculum" class="btn-primary">Start Learning →</a>
+        <a href="../labs.html" class="btn-ghost">View Related Labs</a>
+      </div>
+    </section>
+
+    <!-- Course Body -->
+    <div class="course-layout">
+      <div class="course-main">
+
+        <!-- What You'll Learn -->
+        <div class="course-section-title"><span class="prompt">$</span> what_youll_learn</div>
+        <div class="learn-grid">
+            <div class="learn-item"><span class="learn-check">✓</span>Deploy and manage containerized workloads on Kubernetes</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Configure pods, deployments, services, and ingress</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Implement RBAC, network policies, and pod security</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Manage persistent storage with PVs, PVCs, and StorageClasses</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Package and deploy applications with Helm charts</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Implement GitOps workflows with ArgoCD or Flux</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Troubleshoot Kubernetes clusters and workloads</div>
+            <div class="learn-item"><span class="learn-check">✓</span>Pass both the CKA and CKAD exams</div>
+        </div>
+
+        <!-- Requirements -->
+        <div class="course-section-title"><span class="prompt">$</span> requirements</div>
+        <ul class="req-list">
+            <li class="req-item"><span class="req-bullet">▸</span>Docker and container fundamentals (can build & run images)</li>
+            <li class="req-item"><span class="req-bullet">▸</span>Basic YAML syntax understanding</li>
+            <li class="req-item"><span class="req-bullet">▸</span>Linux command-line proficiency</li>
+            <li class="req-item"><span class="req-bullet">▸</span>Familiarity with cloud platforms (helpful but not required)</li>
+        </ul>
+
+        <!-- Curriculum -->
+        <div class="course-section-title" id="curriculum"><span class="prompt">$</span> curriculum</div>
+        <div class="curriculum">
+        <div class="curriculum-section">
+          <div class="curriculum-header open" onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 01</span>
+              Core Concepts
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons open">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Kubernetes Architecture & Components</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">35m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Pods, ReplicaSets & Deployments</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">35m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Services: ClusterIP, NodePort, LoadBalancer</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">ConfigMaps & Secrets</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">22m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Deploy a Multi-Tier App</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">60m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 02</span>
+              Networking
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Kubernetes Networking Model</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Ingress Controllers & TLS</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Network Policies</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">25m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">CNI Plugins: Calico & Cilium</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">22m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Configure Ingress + TLS</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">60m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 03</span>
+              Storage
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">PersistentVolumes & Claims</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">StorageClasses & Dynamic Provisioning</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">22m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">StatefulSets & Storage</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">25m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Deploy Stateful Application</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">60m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 04</span>
+              Security
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">RBAC: Roles, Bindings & Service Accounts</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">32m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Pod Security Admission</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">25m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Secrets Management & Vault Integration</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Implement RBAC for Multi-Team Cluster</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">60m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 05</span>
+              Helm & GitOps
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">Helm Charts: Templates & Values</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">30m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">ArgoCD GitOps Workflow</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">28m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">Lab: Deploy App with Helm + ArgoCD</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">60m</span>
+            </div>
+          </div>
+        </div>
+        <div class="curriculum-section">
+          <div class="curriculum-header " onclick="toggleSection(this)">
+            <div class="curriculum-section-title">
+              <span class="curriculum-phase">PHASE 06</span>
+              Exam Prep
+            </div>
+            <span class="curriculum-toggle">+</span>
+          </div>
+          <div class="curriculum-lessons ">
+            <div class="lesson-item">
+              <span class="lesson-icon">▶</span>
+              <span class="lesson-name">CKA Killer.sh Walkthrough</span>
+              <span class="lesson-type lt-video">VIDEO</span>
+              <span class="lesson-duration">45m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">⚗</span>
+              <span class="lesson-name">CKAD Practice Scenarios</span>
+              <span class="lesson-type lt-lab">LAB</span>
+              <span class="lesson-duration">90m</span>
+            </div>
+            <div class="lesson-item">
+              <span class="lesson-icon">📝</span>
+              <span class="lesson-name">Timed Practice Exam</span>
+              <span class="lesson-type lt-quiz">QUIZ</span>
+              <span class="lesson-duration">120m</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Instructor -->
+        <div class="course-section-title"><span class="prompt">$</span> instructor</div>
+        <div class="instructor-card">
+          <div class="instructor-avatar">👤</div>
+          <div class="instructor-info">
+            <div class="instructor-name">Leo Park</div>
+            <div class="instructor-title">CKA · CKAD · Platform Engineering Lead</div>
+            <p class="instructor-bio">Platform engineer who manages 30+ Kubernetes clusters across multi-cloud environments. Core contributor to open-source Kubernetes tooling. CKA and CKAD certified.</p>
+          </div>
+        </div>
+
+      </div><!-- /.course-main -->
+
+      <!-- Sidebar -->
+      <aside class="course-sidebar">
+
+        <!-- Enroll Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Enroll</div>
+          <div class="widget-enroll">
+            <div class="enroll-price enroll-free">Free</div>
+            <a href="#curriculum" class="btn-primary" style="text-align:center;justify-content:center;">Start Now →</a>
+            <p class="enroll-note">Free with a CodeTheBox account. Labs and quizzes included. Completion certificate awarded.</p>
+          </div>
+        </div>
+
+        <!-- Course Info Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Course Info</div>
+          <div class="widget-stat">
+            <span class="ws-label">Duration</span>
+            <span class="ws-value">40 hours</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Modules</span>
+            <span class="ws-value">74</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Live Labs</span>
+            <span class="ws-value">18</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Quizzes</span>
+            <span class="ws-value">12</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Level</span>
+            <span class="ws-value">Advanced</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Certificate</span>
+            <span class="ws-value">Yes</span>
+          </div>
+          <div class="widget-stat">
+            <span class="ws-label">Language</span>
+            <span class="ws-value">English</span>
+          </div>
+        </div>
+
+        <!-- Related Courses Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">Related Courses</div>
+          <a href="terraform.html" class="related-card">
+            <div class="related-dot" style="background:var(--cloud-color)"></div>
+            <div class="related-info">
+              <div class="related-title">Terraform from Zero to Hero</div>
+              <div class="related-meta">Cloud · Intermediate</div>
+            </div>
+          </a>
+          <a href="aws-security-specialty.html" class="related-card">
+            <div class="related-dot" style="background:var(--cloud-color)"></div>
+            <div class="related-info">
+              <div class="related-title">AWS Security Specialty</div>
+              <div class="related-meta">Cloud · Advanced</div>
+            </div>
+          </a>
+          <a href="../infra/docker-containers.html" class="related-card">
+            <div class="related-dot" style="background:var(--infra-color)"></div>
+            <div class="related-info">
+              <div class="related-title">Docker & Container Security</div>
+              <div class="related-meta">Infra · Intermediate</div>
+            </div>
+          </a>
+        </div>
+
+      </aside>
+    </div><!-- /.course-layout -->
+
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Accordion toggle
+    function toggleSection(header) {
+      header.classList.toggle('open');
+      const lessons = header.nextElementSibling;
+      lessons.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
